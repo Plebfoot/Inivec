@@ -29,6 +29,7 @@ Route::get('/artiesten', function () { return view('artiesten'); });
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
+Route::post('/users/profile_management', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('update.profile');
 
 
 /*----------------Auth Routes---------------------*/
