@@ -1,0 +1,225 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    background: #ececec;
+    padding: 10px 20px 10px 20px;
+    position: relative;
+}
+
+#more {
+    display: none;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 87vh;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+nav ul {
+  
+    padding-right: 60px;
+    margin-top: 7px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none !important;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-top: 10px;
+  }
+
+  .userInfo {
+    padding-left: 20%;
+    padding-top: 10%;
+  }
+
+  .music h3 {
+    font-size: 50px!important;
+    text-align: center;
+    padding-top: 35px;
+  }
+
+ 
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  
+  
+  .header__wrapper header {
+    width: 100%;
+    background: url("../imgs/banner.jpg") no-repeat 50% 20% / cover;
+    min-height: calc(100px + 15vw);
+  }
+  
+  .header__wrapper .cols__container .left__col {
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 350px;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .header__wrapper .cols__container .left__col .img__container {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  .header__wrapper .cols__container .left__col .img__container img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
+  }
+  .header__wrapper .cols__container .left__col .img__container span {
+    position: absolute;
+    background: #2afa6a;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    bottom: 3px;
+    right: 11px;
+    border: 2px solid #fff;
+  }
+  .header__wrapper .cols__container .left__col h2 {
+    margin-top: 60px;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  .header__wrapper .cols__container .left__col p {
+    font-size: 0.9rem;
+    color: #818181;
+    margin: 0;
+  }
+  .header__wrapper .cols__container .left__col .about {
+    justify-content: space-between;
+    position: relative;
+    margin: 35px 0;
+  }
+  .header__wrapper .cols__container .left__col .about .list {
+    display: flex;
+    flex-direction: column;
+    color: #818181;
+    font-size: 0.9rem;
+  }
+  .header__wrapper .cols__container .left__col .about .list span {
+    color: #1d1d1d;
+    font-weight: 600;
+  }
+  .header__wrapper .cols__container .left__col .about:after {
+    position: absolute;
+    content: "";
+    bottom: -16px;
+    display: block;
+    background: #cccccc;
+    height: 1px;
+    width: 100%;
+  }
+  .header__wrapper .cols__container .content p {
+    font-size: 1rem;
+    color: #1d1d1d;
+    line-height: 1.8em;
+  }
+
+  
+  /* Responsiveness */
+  
+  @media (min-width: 868px) {
+    .header__wrapper .cols__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+    }
+    .header__wrapper .cols__container .left__col {
+      padding: 25px 0px;
+    }
+    .header__wrapper .cols__container .right__col nav #nav {
+      flex-direction: row;
+      gap: 30px;
+    }
+    .header__wrapper .cols__container .right__col .photos {
+      height: 365px;
+      overflow: auto;
+      padding: 0 0 30px;
+    }
+  }
+  
+  @media (min-width: 1017px) {
+    .header__wrapper .cols__container .left__col {
+      margin: 0;
+      margin-right: auto;
+    }
+    .header__wrapper .cols__container .right__col nav {
+      flex-direction: row;
+    }
+    .header__wrapper .cols__container .right__col nav button {
+      margin-top: 0;
+    }
+  }
+
+  
