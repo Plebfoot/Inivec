@@ -25,7 +25,7 @@ Route::get('/artiesten', function () { return view('artiesten'); });
 
 
 
-/*----------------Artist Routes---------------------*/
+/*----------------Controller Routes---------------------*/
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
