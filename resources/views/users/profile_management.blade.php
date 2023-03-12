@@ -7,13 +7,13 @@
         <div class="container mt-4">
 
             <form method="POST" enctype="multipart/form-data" id="profile_setup_frm" action="{{ route('update.profile') }}">
-                    <div class="col-md-4 border-right">
+                    <div id="imgChanger" class="col-md-4 border-right">
                         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                             @php($profile_img = auth()->user()->profile_img)
-                            <img class="rounded-circle mt-5" height="250" width="250"
+                            <img id="userImage" class="rounded-circle mt-5"
                                 src="@if ($profile_img == null) {{ asset('storage/profile_images/person.jpg') }}  @else {{ asset("storage/$profile_img") }} @endif"
                                 id="image_preview_container">
-                            <span class="font-weight-bold">
+                            <span id="input" class="font-weight-bold">
                                 <input type="file" name="profile_image" id="profile_image" class="form-control">
                             </span>
                         </div>
@@ -21,7 +21,7 @@
                     <div class="col-md-8 border-right">
                         <div class="p-3 py-5">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4 class="text-right">Profile Settings</h4>
+                                <h4 class="text-right">Profiel Instellingen</h4>
                             </div>
 
                             <div class="mt-2">

@@ -15,6 +15,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome/css/font-awesome.min.css') }}">
 
 
@@ -23,19 +24,43 @@
 <body>
     <nav>
         <h1 class="logo"><a href="/">Inivec</a></h1>
-        <ul>
+        {{-- <img id="userImg" src="storage/{{Auth::user()->profile_img}}"> --}}
+        <ul class="navbar-nav ms-auto">
+            <!-- Authentication Links -->
+            <li class="nav-item dropdown">
+                <img id="userImg" src="storage/{{ Auth::user()->profile_img }}">
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/home">
+                        {{ __('Dashboard') }}
+                    </a>
+                    <a class="dropdown-item" href="/instellingen">
+                        {{ __('Profiel Management') }}
+                    </a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        </ul>
+        {{-- <ul>
             <li><a href="/home">Dashboard</a></li>
             <li><a href="/instellingen">Profiel Instellingen</a></li>
             <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">Uitloggen</a></li>
-        </ul>
+        </ul> --}}
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>
     </nav>
     <div class="wrapper">
-        <div class="container-login main">
-       
+        <div class="container-login main" style="padding-top: 10px;">
+
             @yield('content')
 
         </div>
