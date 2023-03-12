@@ -37,7 +37,7 @@
             <div class="header-content">
                 <h2>Willekeurige artiest</h2>
                     <div class="artist-showcase">
-                        <div class="showcase-image"><a href="{{ route('profiles', $artist->name) }}"><img src="{{ asset("storage/$artist->image_url") }} "></a></div>
+                        <div class="showcase-image"><a href="{{ route('profiles', $artist->name) }}"><img src="{{ asset("storage/$artist->profile_img") }} "></a></div>
                         <div class="showcase-info">
                             <a href="{{ route('profiles', $artist->name) }}" style="text-decoration: none; color:black;" ><h3>{{ $artist->name }}</h3></a>
                             <caption>{{ $artist->tags }}</caption>

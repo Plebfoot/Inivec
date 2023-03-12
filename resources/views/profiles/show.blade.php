@@ -9,7 +9,7 @@
         <div class="cols__container">
             <div class="left__col">
                 <div class="img__container">
-                    <img src="/assets/imgs/person.jpg" />
+                    <img src="{{ asset("storage/$artist->profile_img") }}" />
                 </div>
                 <h2>{{ $artist->name }}</h2>
                 <p>{{ $artist->music_tags }}</p>
@@ -17,8 +17,8 @@
                 <p>{{ $artist->tijd_indicatie }} minuten</p>
 
                 <ul class="about">
-                    <li class="list"><span>{{ $artist->lids }}</span>Leden</li>
-                    <li class="list"><span>Covers, Eigen</span>Speelt</li>
+                    <li class="list"><span>{{ $artist->leden }}</span>Leden</li>
+                    <li class="list"><span>{{ $artist->music_tags }}</span>Speelt</li>
                     <li class="list"><span>12</span>Boekingen</li>
                 </ul>
 
