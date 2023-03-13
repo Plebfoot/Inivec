@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login - Inivec</title>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
@@ -19,45 +17,57 @@
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome/css/font-awesome.min.css') }}">
 
 
+
+
 </head>
+<div class="hero">
+    <nav>
+        @php($profile_img = auth()->user()->profile_img);
+        <a href="/" class="logo">Inivec</a>
+        <ul>
+            <li><a href="">Over ons</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <img src="@if ($profile_img == null) {{ asset('storage/profile_images/person.jpg') }}  @else {{ asset("storage/$profile_img") }} @endif "
+            onclick="toggleMenu()" class="user-pic">
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <img
+                        src="@if ($profile_img == null) {{ asset('storage/profile_images/person.jpg') }}  @else {{ asset("storage/$profile_img") }} @endif">
+                    <h2>{{ Auth::user()->name }} </h2>
+                </div>
+                <hr>
+
+                <a href="/home" class="sub-menu-link">
+                    <img src="{{ asset('assets/imgs/nav_imgs/profile.png') }}">
+                    <p>Dashboard</p>
+                    <span>></span>
+                </a>
+
+                <a href="/instellingen" class="sub-menu-link">
+                    <img src="{{ asset('assets/imgs/nav_imgs/setting.png') }}">
+                    <p>Instellingen & Privacy</p>
+                    <span>></span>
+                </a>
+
+                <a href="{{ route('logout') }}" class="sub-menu-link" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <img src="{{ asset('assets/imgs/nav_imgs/logout.png') }}">
+                    <p>Uitloggen</p>
+                    <span>></span>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </nav>
+
 
 <body>
-    <nav>
-        <h1 class="logo"><a href="/">Inivec</a></h1>
-        {{-- <img id="userImg" src="storage/{{Auth::user()->profile_img}}"> --}}
-        <ul class="navbar-nav ms-auto">
-            <!-- Authentication Links -->
-            <li class="nav-item dropdown">
-                <img id="userImg" src="storage/{{ Auth::user()->profile_img }}">
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/home">
-                        {{ __('Dashboard') }}
-                    </a>
-                    <a class="dropdown-item" href="/instellingen">
-                        {{ __('Profiel Management') }}
-                    </a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        </ul>
-        {{-- <ul>
-            <li><a href="/home">Dashboard</a></li>
-            <li><a href="/instellingen">Profiel Instellingen</a></li>
-            <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">Uitloggen</a></li>
-        </ul> --}}
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form>
-    </nav>
     <div class="wrapper">
         <div class="container-login main" style="padding-top: 10px;">
 
@@ -70,5 +80,7 @@
                 style="text-decoration: none; pointer: cursor; color:black;">www.inivec.nl</a></p>
     </div>
 </body>
-
+</div>
+    <!-- Javascript -->
+    <script src="{{ asset('assets/js/admin/main.js') }}"></script>
 </html>

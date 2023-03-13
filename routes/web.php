@@ -23,6 +23,7 @@ use App\Http\Controllers\admin\ArtistControllerAdmin;
 Route::get('/', function () { return view('welcome'); });
 Route::get('/inschrijven', function () { return view('inschrijven'); });
 Route::get('/artiesten', function () { return view('artiesten'); });
+Route::get('/test', function () { return view('/users/test'); });
 
 
 

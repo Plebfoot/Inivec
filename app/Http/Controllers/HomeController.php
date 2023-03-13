@@ -73,6 +73,7 @@ class HomeController extends Controller
         Auth::user()->update([
             'name' => $request->name,
             'profile_img' => $profile_img ?? Auth::user()->profile_img
+            
         ]);
      
 
