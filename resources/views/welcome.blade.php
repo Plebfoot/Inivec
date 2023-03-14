@@ -116,5 +116,68 @@
             <h2>Waarom kiezen voor Inivec?</h2>
         </div>
     </div>
+    <div class="other">
+        <div class="infotext"> 
+            <h2>Artiesten inschrijven</h2>
+        </div>
     </div>
+    <div class="info">
+        <div class="infotext"> 
+            <h2>Greep in de database</h2>
+        </div>
+    </div>
+    <div class="other">
+        <div class="infotext"> 
+            <h2>Nieuws & Niet zeker shit</h2>
+        </div>
+    </div>
+    </div>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3><span>Inivec</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2023 <strong>Inivec</strong> All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span></span>
+                    Nederland</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>--</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:klantenservice@inivec.nl">klantenservice@inivec.nl</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Over Inivec</span>
+                <strong>Inivec</strong> is een bedrijf dat zich richt op beginnende artiesten. 
+                Wij helpen artiesten om een leuk optreden te kunnen geven aan jullie.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
 @endsection
