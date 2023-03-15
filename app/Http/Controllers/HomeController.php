@@ -72,8 +72,9 @@ class HomeController extends Controller
         # update the user info
         Auth::user()->update([
             'name' => $request->name,
-            'profile_img' => $profile_img ?? Auth::user()->profile_img
-            
+            'profile_img' => $profile_img ?? Auth::user()->profile_img,
+            'username' => $request->username,
+            'bio' => $request->bio
         ]);
      
 

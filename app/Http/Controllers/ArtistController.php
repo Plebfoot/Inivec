@@ -10,9 +10,6 @@ class ArtistController extends Controller
 {
     public function index($username)
     {
-        
-        dd($username);
         return view('profiles.show', compact('username'));
-
     }
 }

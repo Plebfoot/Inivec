@@ -11,6 +11,7 @@ class ProfilesController extends Controller
     public function show(User $username)
     {
         $artist = Artist::where('name', $username->name)->first();
+
         return view('profiles.show', compact('username'), ['artist' => $artist ]);
     }
 }

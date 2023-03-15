@@ -43,17 +43,16 @@
                                 <label class="labels">Band Naam</label>
                                 <span class="informatie"
                                     title="Voer hier uw Band naam in. Gebruik alleen letters.">i</span>
-                                <input type="text" name="username" class="form-control" placeholder="first name"
-                                    value="{{ auth()->user()->band }}">
+                                <input type="text" name="username" class="form-control" placeholder="Band naam"
+                                    value="{{ auth()->user()->username }}">
                                 
                             </div>
                             <div class="col-md-6">
-                                <label class="labels">Name</label>
+                                <label class="labels">Biografie</label>
                                 <span class="informatie"
                                     title="Voer hier uw voornaam in. Gebruik alleen letters.">i</span>
-                                <input type="text" name="name" class="form-control" placeholder="first name"
-                                    value="{{ auth()->user()->name }}">
-                                
+                                <textarea name="bio" style="height: 150px" class="form-control" placeholder="Biografie"                                
+                                    value="">{{ Auth::user()->bio ? Auth::user()->bio : 'None'}}</textarea>
                             </div>
                             <div class="col-md-6">
                                 <label class="labels">Name</label>

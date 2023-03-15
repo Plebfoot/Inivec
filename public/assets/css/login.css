@@ -184,17 +184,3 @@ span a:hover{
     }
 }
 
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-  }
-
-  .footer p {
-    margin-top: 10px;
-    padding-top: 8px;
-  }

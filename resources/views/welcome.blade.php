@@ -37,11 +37,11 @@
             <div class="header-content">
                 <h2>Willekeurige artiest</h2>
                 <div class="artist-showcase">
-                    <div class="showcase-image"><a href="{{ route('profiles', $artist->name) }}"><img
+                    <div class="showcase-image"><a href="{{ route('profiles', $artist->username) }}"><img
                                 src="{{ asset("storage/$artist->profile_img") }} "></a></div>
                     <div class="showcase-info">
-                        <a href="{{ route('profiles', $artist->name) }}" style="text-decoration: none; color:black;">
-                            <h3>{{ $artist->name }}</h3>
+                        <a href="{{ route('profiles', $artist->username) }}" style="text-decoration: none; color:black;">
+                            <h3>{{ $artist->username }}</h3>
                         </a>
                         <caption>{{ $artist->tags }}</caption>
                         <div class="rating">
@@ -59,6 +59,7 @@
                     <div class="video">
                         <img src="{{ asset('assets/imgs/band.jpg') }}">
                     </div>
+
                 </div>
             </div>
         </div>
@@ -112,22 +113,23 @@
         </div>
     </div>
     <div class="info">
-        <div class="infotext"> 
+        <div class="infotext">
             <h2>Waarom kiezen voor Inivec?</h2>
+
         </div>
     </div>
     <div class="other">
-        <div class="infotext"> 
+        <div class="infotext">
             <h2>Artiesten inschrijven</h2>
         </div>
     </div>
     <div class="info">
-        <div class="infotext"> 
+        <div class="infotext">
             <h2>Greep in de database</h2>
         </div>
     </div>
     <div class="other">
-        <div class="infotext"> 
+        <div class="infotext">
             <h2>Nieuws & Niet zeker shit</h2>
         </div>
     </div>
@@ -167,7 +169,7 @@
         <div class="footer-right">
             <p class="footer-company-about">
                 <span>Over Inivec</span>
-                <strong>Inivec</strong> is een bedrijf dat zich richt op beginnende artiesten. 
+                <strong>Inivec</strong> is een bedrijf dat zich richt op beginnende artiesten.
                 Wij helpen artiesten om een leuk optreden te kunnen geven aan jullie.
             </p>
             <div class="footer-icons">
@@ -179,5 +181,4 @@
             </div>
         </div>
     </footer>
-
 @endsection
