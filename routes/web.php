@@ -21,14 +21,14 @@ use App\Http\Controllers\admin\ArtistControllerAdmin;
 /*----------------Normal Routes---------------------*/
 
 Route::get('/', function () { return view('welcome'); });
-Route::get('/inschrijven', function () { return view('inschrijven'); });
-Route::get('/artiesten', function () { return view('artiesten'); });
-Route::get('/test', function () { return view('/users/test'); });
+Route::get('/inschrijven', function () { return view('/pages/inschrijven'); });
+Route::get('/artiesten', function () { return view('/pages/artiesten'); });
 
 
 
 /*----------------Controller Routes---------------------*/
 Route::get('/',[ArtistViewController::class, 'Index']);
+Route::get('/artiesten',[ArtistViewController::class, 'Artists']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
 Route::post('/users/profile_management', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('update.profile');
@@ -36,5 +36,5 @@ Route::post('/users/profile_management', [App\Http\Controllers\HomeController::c
 
 /*----------------Auth Routes---------------------*/
 Auth::routes();
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');;
 Route::group(['middleware' => 'auth'], function() {Route::get('/instellingen', function() {return view('/users/profile_management'); }); });

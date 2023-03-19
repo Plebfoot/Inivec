@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 class ArtistViewController extends Controller{
     public function index() {
         $artist = Artist::inRandomOrder()->first();
-        return view('welcome',  ['artist' => $artist]);
+        return view('/pages/welcome',  ['artist' => $artist]);
+    }
+
+    public function artists() {
+        return view('/pages/artiesten')->with('artists', Artist::all());
     }
 }
