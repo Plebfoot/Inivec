@@ -393,3 +393,6 @@ nav ul li a {
     }
   }       
   
+  .checked {
+    color: #f5168d;
+}
