@@ -13,6 +13,6 @@ class ArtistViewController extends Controller{
     }
 
     public function artists() {
-        return view('/pages/artiesten')->with('artists', Artist::all());
+        return view('/pages/artiesten')->with('artists', Artist::paginate(5));
     }
 }

@@ -18,7 +18,7 @@
     min-height: 87vh;
 }
 
-nav {
+.navigation {
     width: 100%;
     display: flex;
     align-items: center;
@@ -38,19 +38,19 @@ nav {
     margin-left: 50px;
 }
 
-nav ul {
+.navigation ul {
   
     padding-right: 60px;
     margin-top: 7px;
 }
 
-nav ul li {
+.navigation ul li {
     display: inline-block;
     margin: 10px 20px;
 
 }
 
-nav ul li a {
+.navigation ul li a {
     color: black;
     text-decoration: none !important;
 }
@@ -242,7 +242,6 @@ nav ul li a {
     text-align: left;
     font: bold 16px sans-serif;
     padding: 50px 50px 60px 50px;
-    margin-top: 80px;
   }
   
   .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {

@@ -4,50 +4,45 @@
 <title>Inivec - Artiesten </title>
 
 @section('content')
-    <div class="info">
-        <div class="header">
-            <h1>Boek onze artiesten online</h1>
+    <div class="wrapper">
+        <div class="banner">
+            <h1>Boek Artiesten Online</h1>
             <hr>
-            <br>
+            <div class="search-bar">
+                <input type="text" placeholder="Zoek artiesten">
+                <button><i class="fa fa-search"></i></button>
+            </div>
         </div>
         @foreach ($artists as $artist)
-            <div class="artist-showcase">
-                <div class="text">
-                    <small>€{{ $artist->price_range }}</small>
-                    <h1>{{ $artist->username }} </h1>
-                    <p>{{ $artist->bio }}</p>
-                    <a class="text" href="{{ route('profiles', $artist->username) }}">Bekijk artiest &rarr;</a>
-                </div>
-                <div class="artist_image">
-                    <img src="{{ asset("storage/$artist->profile_img") }} ">
+            <div class="artist-container">
+                <div class="artist">
+                    <img src="{{ asset("storage/$artist->profile_img") }}" alt="{{ $artist->username }}"
+                        class="artist-image">
+                    <div class="artist-details">
+                        <caption>{{ $artist->tags }}</caption>
+                        <a href="{{ route('profiles', $artist->username) }}" style="color: #000!important;"><h3 class="artist-name">{{ $artist->username }}</h3></a>
+                        <h2 class="price-range">€{{ $artist->price_range }}</h2>
+                        <p class="tags">{{ $artist->music_tags }}</p>
+                        <p class="biography">{{ $artist->bio }}</p>
+                     
+                        <div class="buttons">
+                            <div class="rating">
+                              @for ($i = 1; $i <= 5; $i++)
+                                  @if ($i <= $artist->rating)
+                                      <span class="fa fa-star checked"></span>
+                                  @else
+                                      <span class="fa fa-star"></span>
+                                  @endif
+                              @endfor
+                          </div>
+                            <a href="#" class="btn-bookprofile">Boek nu</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <br>
-
-            {{-- <div class="artist-showcase">
-                <div class="showcase-image"><a href="{{ route('profiles', $artist->username) }}"><img
-                            src="{{ asset("storage/$artist->profile_img") }} "></a></div>
-                <div class="showcase-info">
-                    <a href="{{ route('profiles', $artist->username) }}" style="text-decoration: none; color:black;">
-                        <h3>{{ $artist->username }}</h3>
-                    </a>
-                    <caption>{{ $artist->tags }}</caption>
-                    <div class="rating">
-                        @for ($i = 1; $i <= 5; $i++)
-                            @if ($i <= $artist->rating)
-                                <span class="fa fa-star checked"></span>
-                            @else
-                                <span class="fa fa-star"></span>
-                            @endif
-                        @endfor
-                    </div>
-                    <span class="tags">{{ $artist->music_tags }}</span> </br>
-                    <span class="price">€{{ $artist->price_range }}</span>
-                </div>
-                <div class="video">
-                    <img src="{{ asset('assets/imgs/band.jpg') }}">
-                </div>
-            </div> --}}
         @endforeach
+        <div class="m-4">
+            {{ $artists->onEachSide(1)->links() }}
+        </div>
     </div>
 @endsection

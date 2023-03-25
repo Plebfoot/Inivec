@@ -1,71 +1,191 @@
-.header h1 {
-    font-size: 55px;
-    text-align: center;
-    padding-top: 20px;
+.wrapper {
+  background-color: #e9e9e951 !important;
 }
 
-.header hr {
-    width: 45%;
-    margin: auto;
+/* Standaard stijlen */
+.artist-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 20px;
+  gap: 20px;
 }
 
-p, small {
-    color: #8f8f8f;
+.pagination {justify-content: center;}
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
 }
 
-p {
-    font-size: 0.9rem;
-    line-height: 23px;
+.artist {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.artist-image {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.artist-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.artist-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price-range {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.biography {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-profile {
+  display: block;
+  width: 120px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 13px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttons a:hover {
+  color: white !important;
+}
+
+.btn-bookprofile {
+  display: block;
+  width: 155px;
+  height: 50px;
+  background-color: #f5168d;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-profile:hover {
+  background-color: #427cc3 !important;
+}
+
+.btn-bookprofile:hover {
+  background-color: #d13387 !important;
+}
+
+.banner {
+  text-align: center;
+  padding: 20px;
 }
 
 h1 {
-    margin: 0;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.artist-showcase {
-    width: 61em;
-    color: #f1f1f1;
-    display: flex;
-    background: #111;
-    margin: auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+hr {
+  margin: 0 auto!important;
+  width: 80%;
 }
 
-.text {
-    padding: 1.5em;
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+
+.search-bar input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  background-color: #e9e9e951;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/* Media queries voor responsive design */
+@media only screen and (max-width: 768px) {
+  .artist {
     flex-direction: column;
-}
+  }
 
-.text {
-    color: #fff!important;
-    text-decoration: none!important;
-}
+  .artist-image {
+    max-width: 100%;
+    height: auto;
+  }
 
-.artist_image {
-    width: 50%;
-    height: 21em;
-    position: relative;
-    overflow: hidden;
+  .artist-details {
+    padding: 10px;
+    text-align: center;
+  }
 
-}
+  .artist-name {
+    font-size: 20px;
+  }
 
-.artist_image img {
-    width: 100%;
-}
+  .price-range {
+    font-size: 16px;
+  }
 
-.artist_image::before {
-    content: '';
-    position: absolute;
-    left: -6.1em;
-    top: 50%;
-    transform: translateY(-50%) rotate(20deg);
-    background-color: #111;
-    width: 40%;
-    height: 140%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  .biography {
+    font-size: 14px;
+  }
+
+  .buttons {
+    display: block;
+  }
+
+  .btn-profile {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+    margin: 2px;
+  }
+
+  .btn-bookprofile {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+  }
 }
