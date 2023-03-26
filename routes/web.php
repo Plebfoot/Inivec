@@ -30,7 +30,9 @@ Route::get('/artiesten', function () { return view('/pages/artiesten'); });
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/artiesten',[ArtistViewController::class, 'Artists']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
+Route::get('/arsitesten/{username}/boeken', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
+Route::get('/artiesten/{username}/boeken', 'App\Http\Controllers\ProfilesController@boek')->name('booking');
 Route::post('/users/profile_management', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('update.profile');
 
 

@@ -35,7 +35,7 @@
                                   @endif
                               @endfor
                           </div>
-                            <a href="#" class="btn-bookprofile">Boek nu</a>
+                            <a href="{{ route('booking', $artist->username) }}" class="btn-bookprofile">Boek nu</a>
                         </div>
                     </div>
                 </div>

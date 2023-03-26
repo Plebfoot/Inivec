@@ -14,4 +14,10 @@ class ProfilesController extends Controller
 
         return view('profiles.show', compact('username'), ['artist' => $artist ]);
     }
+
+    public function boek(User $username) {
+        $artist = Artist::where('name', $username->name)->first();
+
+        return view('profiles.book', compact('username'), ['artist' => $artist ]);
+    }
 }
