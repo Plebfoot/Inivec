@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('rating')->nullable();
             $table->string('tags')->nullable();
             $table->string('music_tags')->nullable();
             $table->string('price_range')->nullable();

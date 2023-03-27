@@ -1,8 +1,7 @@
 @extends('layouts.header')
 
 <title>Inivec - {{ $username->username }}</title>
-<script src="/assets/js/main.js"></script>
-
+<link rel="stylesheet" href="{{ asset('assets/css/artiesten/book.css') }}">
 
 @section('content')
     <div class="header__wrapper">
@@ -10,6 +9,5 @@
         <h1> Boek {{ $artist->username }} nu! </h1>
        </div>
 </div>
-
 @endsection
 
