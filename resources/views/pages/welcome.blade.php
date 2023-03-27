@@ -126,7 +126,24 @@
     </div>
     <div class="info">
         <div class="infotext">
-            <h2>Greep in de database</h2>
+            <h2>Opkomende evenementen</h2>
+            <div class="artist-container">
+                <div class="artist">
+                    <img src="{{ asset("storage/profile_images/appelpop.jpg") }}"
+                        class="artist-image">
+                    <div class="artist-details">
+                        <caption>{{ $event->price }}</caption>
+                        <a href="#" style="color: #000!important;"><h3 class="artist-name">{{ $event->eventname }}</h3></a>
+                        <h4 class="price-range">{{ $event->event_date}} - {{ $event->event_till }}</h4>
+                        <p class="tags">Locatie: Tiel</p>
+                        <p class="biography">{{ $event->bio }}</p>
+                     
+                        <div class="buttons">
+                            <a href="#" class="btn-bookprofile">Bekijk meer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="other">

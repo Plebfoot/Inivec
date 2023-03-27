@@ -2,10 +2,10 @@
 
 
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\EventViewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistViewController;
-use App\Http\Controllers\ProfilesController;
-use App\Http\Controllers\admin\ArtistControllerAdmin;
+
 
 /*
 |--------------------------------------------------------------------------

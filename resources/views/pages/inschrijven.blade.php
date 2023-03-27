@@ -35,9 +35,6 @@
         <div class="container-login main">
             <div class="row">
                 <div class="col-md-6 side-image">
-                    {{-- <div class="text">
-                        <p>Login bij je dashboard <i>Inivec</i></p>
-                    </div> --}}
                 </div>
                 <div class="col-md-6 right">
                     <div class="input-box">

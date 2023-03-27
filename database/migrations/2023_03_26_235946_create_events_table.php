@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('eventname');
             $table->timestamp('event_date');
+            $table->timestamp('event_till')->nullable();
             $table->string('event_img')->nullable();
             $table->string('bio');
             $table->string('price');
