@@ -7,10 +7,12 @@ use DB;
 use App\Models\Artist;
 use App\Http\Controllers\Controller;
 
+
 class ArtistViewController extends Controller{
     public function index() {
         $artist = Artist::inRandomOrder()->first();
-        $event = Event::first();
+        $event = Event::orderBy('event_date')->paginate(3);
+
         
         return view('/pages/welcome',  ['artist' => $artist, 'event' => $event ]);
     }

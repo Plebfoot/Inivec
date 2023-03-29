@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('event_till')->nullable();
             $table->string('event_img')->nullable();
             $table->string('bio');
+            $table->string('location');
             $table->string('price');
             $table->timestamps();
         });

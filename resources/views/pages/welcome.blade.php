@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="nav">
-            <nav>
+            <nav class="nav">
                 <h1 class="logo"><a href="/">Inivec</a></h1>
                 @if (Auth::check())
-                    <ul>
+                    <ul class="ul">
                         <li><a href="#">Óver ons</a></li>
                         <li><a href="/artiesten">Artiesten</a></li>
                         <li><a href="#">Contact ons</a></li>
@@ -14,7 +14,7 @@
                     <a href="/home" style="text-decoration: none;"><button type="button" class="btn"
                             style="text-decoration: none;">Dashboard</button></a>
                 @else
-                    <ul>
+                    <ul class="ul">
                         <li><a href="#">Óver ons</a></li>
                         <li><a href="/artiesten">Artiesten</a></li>
                         <li><a href="/inschrijven">Inschrijven</a></li>
@@ -113,39 +113,75 @@
             </div>
         </div>
     </div>
-    <div class="info">
-        <div class="infotext">
-            <h2>Waarom kiezen voor Inivec?</h2>
-
+    <section class="artiesten">
+        <div class="artiest-inschrijven">
+            <h2>Word een artiest</h2>
+            <p>Als artiest krijg je de kans om je talent te laten zien aan een breed publiek en je netwerk uit te breiden.
+                Registreer nu en begin met het delen van je talent met de wereld!</p>
+            <div class="buttons">
+                <a href="/inschrijven" class="btn-bookprofile">Inschrijven</a>
+            </div>
         </div>
-    </div>
-    <div class="other">
-        <div class="infotext">
-            <h2>Artiesten inschrijven</h2>
+        <div class="oproep-plaatsen">
+            <h2>Oproep plaatsen</h2>
+            <p>Plaats een oproep voor artiesten of evenementen en bereik een breed publiek van getalenteerde artiesten.
+                Registreer nu en begin met het vinden van het talent dat je nodig hebt!</p>
+            <div class="buttons">
+                <a href="#" class="btn-bookprofile">Oproep plaatsen</a>
+            </div>
         </div>
-    </div>
-    <div class="info">
+    </section>
+    <div class="events" id='events'>
         <div class="infotext">
             <h2>Opkomende evenementen</h2>
-            <div class="artist-container">
-                <div class="artist">
-                    <img src="{{ asset("storage/profile_images/appelpop.jpg") }}"
-                        class="artist-image">
-                    <div class="artist-details">
-                        <caption>{{ $event->price }}</caption>
-                        <a href="#" style="color: #000!important;"><h3 class="artist-name">{{ $event->eventname }}</h3></a>
-                        <h4 class="price-range">{{ $event->event_date}} - {{ $event->event_till }}</h4>
-                        <p class="tags">Locatie: Tiel</p>
-                        <p class="biography">{{ $event->bio }}</p>
-                     
-                        <div class="buttons">
-                            <a href="#" class="btn-bookprofile">Bekijk meer</a>
+            @foreach ($event as $events)
+                <div class="artist-container">
+                    <div class="artist">
+                        <img src="{{ $events->event_img }}" class="artist-image">
+                        <div class="artist-details">
+                            <caption>Locatie: {{ $events->location }}</caption>
+                            <a href="#" style="color: #000!important;">
+                                <h3 class="artist-name">{{ $events->eventname }}</h3>
+                            </a>
+                            <h4 class="price-range">{{ $events->event_date }} - {{ $events->event_till }}</h4>
+                            <h5>Prijs: {{ $events->price }} </h5>
+                            <p class="biography">{{ $events->bio }}</p>
+
+                            <div class="buttons">
+                                <a href="#" class="btn-bookprofile">Bekijk meer</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            @endforeach
+            <div class="m-4">
+                {!! $event->fragment('events')->render() !!}
             </div>
         </div>
     </div>
+    <section class="why-choose-us">
+        <h2>Waarom kiezen voor ons?</h2>
+        <div class="reasons">
+            <div class="reason">
+                <img src="icon1.png" alt="Icoon 1">
+                <h3>Reden 1</h3>
+                <p>We zijn al meer dan 10 jaar actief in de industrie en hebben de kennis en ervaring om u de beste service
+                    te bieden.</p>
+            </div>
+            <div class="reason">
+                <img src="icon2.png" alt="Icoon 2">
+                <h3>Reden 2</h3>
+                <p>Onze klantenservice is altijd beschikbaar om u te helpen en eventuele vragen of zorgen te beantwoorden.
+                </p>
+            </div>
+            <div class="reason">
+                <img src="icon3.png" alt="Icoon 3">
+                <h3>Reden 3</h3>
+                <p>We bieden een breed scala aan producten en diensten, zodat u altijd de juiste oplossing voor uw behoeften
+                    kunt vinden.</p>
+            </div>
+        </div>
+    </section>
     <div class="other">
         <div class="infotext">
             <h2>Nieuws & Niet zeker shit</h2>

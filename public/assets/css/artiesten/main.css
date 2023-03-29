@@ -78,6 +78,10 @@
   color: white !important;
 }
 
+.events {
+  height: max-content;
+}
+
 .btn-bookprofile {
   display: block;
   width: 155px;

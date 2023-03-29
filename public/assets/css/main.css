@@ -18,7 +18,7 @@
     padding: 10px 8%;
 }
 
-nav {
+.nav {
     width: 100%;
     display: flex;
     align-items: center;
@@ -37,20 +37,20 @@ nav {
     text-decoration: none;
 }
 
-nav ul {
+.nav .ul {
     list-style: none;
     width: 100%;
     text-align: right;
     padding-right: 60px;
 }
 
-nav ul li {
+.nav .ul li {
     display: inline-block;
     margin: 10px 20px;
 
 }
 
-nav ul li a {
+.nav .ul li a {
     color: #fff;
     text-decoration: none !important;
 }
@@ -204,6 +204,12 @@ nav ul li a {
     background: #d7d7dd;
 }
 
+.events {
+    height: auto;
+    background: #fff;
+    display: flex;
+}
+
 .other {
     height: 300px;
     background: white;
@@ -297,6 +303,7 @@ footer {
 .artist-container {
     display: flex;
     flex-wrap: wrap;
+    padding-top: 20px;
     max-width: 60%;
     margin: 0 auto;
     justify-content: center;
@@ -306,9 +313,175 @@ footer {
 }
 
 .pagination {
+    display: flex;
     justify-content: center;
+    list-style: none;
+    padding-bottom: 10px;
 }
 
+.page-link {
+    position: relative;
+    display: block;
+    color: #f5168d;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.why-choose-us {
+    background-color: #f9f9f9;
+    padding: 50px;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.reasons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reason {
+    width: 30%;
+    text-align: center;
+}
+
+.reason img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.reason h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.reason p {
+    font-size: 16px;
+}
+
+.artiesten {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    height: 500px;
+    position: relative;
+    flex-wrap: wrap; 
+  }
+  
+  .artiesten:before {
+    position: absolute;
+    left: calc(50% - 0.5px)!important; /* halve breedte van 1px lijn */
+    top: 0;
+    bottom: 0;
+    width: 1px; /* breedte van 1px lijn */
+    background-color: #ccc;
+  }
+  
+  .artiest-inschrijven,
+  .oproep-plaatsen {
+    width: 45%;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .artiest-inschrijven {
+    border-right: 1px solid #ccc;
+  }
+  
+  .oproep-plaatsen {
+    border-left: 1px solid #ccc;
+  }
+  
+
+
+@media (prefers-reduced-motion:reduce) {
+    .page-link {
+        transition: none
+    }
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #f5168d;
+    background-color: #e9ecef;
+    border-color: #dee2e6
+}
+
+.page-link:focus {
+    z-index: 3;
+    color: #f5168d;
+    background-color: #e9ecef;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+}
+
+.page-item:not(:first-child) .page-link {
+    margin-left: -1px
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #f5168d;
+    border-color: #f5168d
+}
+
+.page-item.disabled .page-link {
+    color: #ad5050;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6
+}
+
+.page-link {
+    padding: .375rem .75rem
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem
+}
+
+.pagination-lg .page-link {
+    padding: .75rem 1.5rem;
+    font-size: 1.25rem
+}
+
+.pagination-lg .page-item:first-child .page-link {
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem
+}
+
+.pagination-lg .page-item:last-child .page-link {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem
+}
+
+.pagination-sm .page-link {
+    padding: .25rem .5rem;
+    font-size: .875rem
+}
+
+.pagination-sm .page-item:first-child .page-link {
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem
+}
+
+.pagination-sm .page-item:last-child .page-link {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem
+}
 
 .buttons {
     display: flex;
@@ -606,4 +779,53 @@ hr {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+}
+
+@media only screen and (max-width: 768px) {
+  .artist {
+    flex-direction: column;
+  }
+
+  .artist-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .artist-details {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .artist-name {
+    font-size: 20px;
+  }
+
+  .price-range {
+    font-size: 16px;
+  }
+
+  .biography {
+    font-size: 14px;
+  }
+
+  .buttons {
+    display: block;
+  }
+
+  .btn-profile {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+    margin: 2px;
+  }
+
+  .btn-bookprofile {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    border-radius: 20px;
+  }
 }
