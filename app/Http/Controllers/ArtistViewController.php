@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
-use DB;
+use App\Models\News;
 use App\Models\Artist;
 use App\Http\Controllers\Controller;
-
 
 class ArtistViewController extends Controller{
     public function index() {
         $artist = Artist::inRandomOrder()->first();
         $event = Event::orderBy('event_date')->paginate(3);
+        $news = News::orderBy('created_at')->paginate(2);
 
         
-        return view('/pages/welcome',  ['artist' => $artist, 'event' => $event ]);
+        return view('/pages/welcome',  ['artist' => $artist, 'event' => $event, 'news' => $news]);
     }
 
     public function artists() {

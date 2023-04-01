@@ -1,118 +1,187 @@
 @extends('layouts.layout')
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+
 @section('content')
-    <div class="container">
-        <div class="nav">
-            <nav class="nav">
-                <h1 class="logo"><a href="/">Inivec</a></h1>
-                @if (Auth::check())
-                    <ul class="ul">
-                        <li><a href="#">Óver ons</a></li>
-                        <li><a href="/artiesten">Artiesten</a></li>
-                        <li><a href="#">Contact ons</a></li>
-                    </ul>
-                    <a href="/home" style="text-decoration: none;"><button type="button" class="btn"
-                            style="text-decoration: none;">Dashboard</button></a>
-                @else
-                    <ul class="ul">
-                        <li><a href="#">Óver ons</a></li>
-                        <li><a href="/artiesten">Artiesten</a></li>
-                        <li><a href="/inschrijven">Inschrijven</a></li>
-                    </ul>
-                    <a href="/login" style="text-decoration: none;"><button type="button" class="btn"
-                            style="text-decoration: none;">Login</button></a>
-                @endif
-            </nav>
-        </div>
-        <div class="header">
-            <div class="header-content">
-                <h1>Inivec<br>
-                    <p>Vind en boek live muziek.</p>
-                </h1>
-                <p>Bands, DJs en solo-artiesten inhuren. <br>Zonder commissies.</p>
-                <form>
-                    <input type="text" placeholder="Trefwoorden...">
-                    <button type='submit' class='btn'>Zoek</button>
-                </form>
+    <!-- Navbar sectie -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/assets/imgs/logo.jpg" alt="brand" width="120px">
+                <span>Inivec</span>
+            </a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bx bx-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Product</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Contact</a>
+                </div>
+                <a href="/login" class="btn btn-primary shadow-none">Login</a>
             </div>
-            <div class="header-content">
-                <h2>Willekeurige artiest</h2>
-                <div class="artist-showcase">
-                    <div class="showcase-image"><a href="{{ route('profiles', $artist->username) }}"><img
-                                src="{{ asset("storage/$artist->profile_img") }} "></a></div>
-                    <div class="showcase-info">
-                        <a href="{{ route('profiles', $artist->username) }}" style="text-decoration: none; color:black;">
-                            <h3>{{ $artist->username }}</h3>
+        </div>
+    </nav>
+    <!-- Hero Sectie  -->
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copy" data-aos="fade-up">
+                        <div class="text-label">
+                            Vind en boek live muziek.
+                        </div>
+                        <div class="text-hero-bold">
+                            Maak je feest legendarisch met onze artiesten!
+                        </div>
+                        <div class="text-hero-regular">
+                            Ben je op zoek naar fantastische live muziek, een swingende band, een ervaren DJ of een
+                            getalenteerde solo-artiest voor je feest, evenement of bruiloft?
+                        </div>
+                        <div class="cta">
+                            <a href="/artiesten" class="btn btn-primary shadow-none">Bekijk artiesten</a>
+                            <a href="#" class="btn btn-secondary shadow-none ml-3">Plaats oproep</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="/assets/imgs/hero-image.png">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="genres">
+        <div class="container text-center" style="padding-top: 25px;">
+            <h2>Vier beste genres</h2>
+            <p>We hebben nog veel meer!</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-container">
+                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                            alt="Image 1" class="img-fluid">
+                        <div class="image-text">Bands</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-container">
+                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                            alt="Image 2" class="img-fluid">
+                        <div class="image-text">Solo</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-container">
+                        <a href="/artiesten/ensemble">
+                            <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                                alt="Image 3" class="img-fluid">
+                            <div class="image-text">Ensemble</div>
                         </a>
-                        <caption>{{ $artist->tags }}</caption>
-                        <div class="rating">
-                            @for ($i = 1; $i <= 5; $i++)
-                                @if ($i <= $artist->rating)
-                                    <span class="fa fa-star checked"></span>
-                                @else
-                                    <span class="fa fa-star"></span>
-                                @endif
-                            @endfor
-                        </div>
-                        <span class="tags">{{ $artist->music_tags }}</span> </br>
-                        <span class="price">€{{ $artist->price_range }}</span>
                     </div>
-                    <div class="video">
-                        <img src="{{ asset('assets/imgs/band.jpg') }}">
+                </div>
+                <div class="col-md-3">
+                    <div class="image-container">
+                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                            alt="Image 4" class="img-fluid">
+                        <div class="image-text">DJ's</div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section">
-        <div class="section-regular neutral-100">
-            <div class="container-regular">
-                <div data-w-id="37957543-e9bd-2ee5-9d77-68c8ee874409"
-                    style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;"
-                    class="title-wrap-row">
-                    <div class="title-wrap-left">
-                        <div class="margin-bottom-16">
-                            <h3>De vier beste genres</h3>
-                        </div>
-                        <p class="paragraph-regular text-gray-600">We hebben nog heel veel meer genres!</p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="container_artists">
-
-                <div class="imgs">
-                    <a class="type-item darken">
-                        <img class="type-img img-responsive center-block" alt="Boek een band"
-                            src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887">
-                    </a>
-                </div>
-                <div class="imgs">
-                    <a class="type-item darken" href="#">
-                        <img class="type-img img-responsive center-block" alt="Boek een band"
-                            src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887">
-                    </a>
-                </div>
-                <div class="imgs">
-                    <a class="type-item darken" href="#">
-                        <img class="type-img img-responsive center-block" alt="Boek een band"
-                            src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887">
-                    </a>
-                </div>
-                <div class="imgs">
-                    <a class="type-item darken" href="#">
-                        <img class="type-img img-responsive center-block" alt="Boek een band"
-                            src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887">
-                    </a>
-                </div>
-                {{-- <div class="arists_button">
-            <a href="/artiesten" style="text-decoration: none;"><button class="btn">Zie alle artiesten</button></a>
-        </div> --}}
+        <div class="row">
+            <div class="col-md-12 text-center mx-auto" style="padding-top: 10px;">
+                <a href="#" class="btn btn-primary">Bekijk genres</a>
             </div>
         </div>
     </div>
+    <div class="events" id='events'>
+        <div class="infotext text-center" style="padding-top: 25px;">
+            <h2>Opkomende evenementen</h2>
+            @foreach ($event as $events)
+                <div class="artist-container">
+                    <div class="artist">
+                        <img src="{{ $events->event_img }}" class="artist-image">
+                        <div class="artist-details">
+                            <caption>Locatie: {{ $events->location }}</caption>
+                            <a href="#" style="color: #000!important;">
+                                <h3 class="artist-name">{{ $events->eventname }}</h3>
+                            </a>
+                            <h4 class="price-range">{{ $events->event_date }} - {{ $events->event_till }}</h4>
+                            <h5>Prijs: {{ $events->price }} </h5>
+                            <p class="biography">{{ $events->bio }}</p>
+
+                            <div class="buttons">
+                                <a href="#" class="btn btn-primary">Bekijk meer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <div id='pagination' class="m-4">
+                {!! $event->fragment('events')->render() !!}
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3><span>Inivec</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2023 <strong>Inivec</strong> All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span></span>
+                    Nederland</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>--</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:klantenservice@inivec.nl">klantenservice@inivec.nl</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Over Inivec</span>
+                <strong>Inivec</strong> is een bedrijf dat zich richt op beginnende artiesten.
+                Wij helpen artiesten om een leuk optreden te kunnen geven aan jullie.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    {{--
     <section class="artiesten">
         <div class="artiest-inschrijven">
             <h2>Word een artiest</h2>
@@ -160,32 +229,37 @@
         </div>
     </div>
     <section class="why-choose-us">
-        <h2>Waarom kiezen voor ons?</h2>
+        <h2>Waarom kiezen voor Inivec?</h2>
         <div class="reasons">
             <div class="reason">
-                <img src="icon1.png" alt="Icoon 1">
-                <h3>Reden 1</h3>
-                <p>We zijn al meer dan 10 jaar actief in de industrie en hebben de kennis en ervaring om u de beste service
-                    te bieden.</p>
+                <h3>Breed aanbod van artiesten</h3>
+                <p> Inivec heeft een uitgebreid netwerk van artiesten, variërend van muzikanten en bands tot solo-artiesten.
+                    Klanten hebben daardoor veel keuze en kunnen altijd een artiest vinden die past bij hun wensen.</p>
             </div>
             <div class="reason">
-                <img src="icon2.png" alt="Icoon 2">
-                <h3>Reden 2</h3>
-                <p>Onze klantenservice is altijd beschikbaar om u te helpen en eventuele vragen of zorgen te beantwoorden.
-                </p>
+                <h3>Persoonlijke service</h3>
+                <p>Inivec biedt persoonlijke service aan klanten, waarbij er goed geluisterd wordt naar de wensen en
+                    behoeften van de klant. Hierdoor kan Inivec een op maat gemaakte oplossing bieden die perfect aansluit
+                    bij de specifieke situatie van de klant.</p>
             </div>
             <div class="reason">
-                <img src="icon3.png" alt="Icoon 3">
-                <h3>Reden 3</h3>
-                <p>We bieden een breed scala aan producten en diensten, zodat u altijd de juiste oplossing voor uw behoeften
-                    kunt vinden.</p>
+                <h3>Direct contact met de artiest</h3>
+                <p>Bij Inivec hebben klanten direct contact met de artiest die ze willen huren. Hierdoor kunnen ze hun
+                    wensen en verwachtingen rechtstreeks met de artiest bespreken en eventuele vragen of onduidelijkheden
+                    direct aan de artiest stellen. </p>
             </div>
         </div>
     </section>
-    <div class="other">
-        <div class="infotext">
-            <h2>Nieuws & Niet zeker shit</h2>
-        </div>
+    <div class="news">
+        @foreach ($news as $news)
+            <article>
+                {{ $news->naam }} <br>
+                {{ $news->small_bericht }} <br>
+                {{ $news->username }} <br>
+                {{ $news->created_at }} <br>
+            </article>
+        @endforeach
+
     </div>
     </div>
     <footer class="footer-distributed">
@@ -234,5 +308,5 @@
                 <a href="#"><i class="fa fa-youtube"></i></a>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 @endsection
