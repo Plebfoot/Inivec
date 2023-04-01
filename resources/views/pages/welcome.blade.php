@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="/assets/imgs/logo.jpg" alt="brand" width="120px">
+                {{-- <img src="/assets/imgs/logo.jpg" alt="brand" width="120px"> --}}
                 <span>Inivec</span>
             </a>
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
@@ -20,10 +20,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Product</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">About</a>
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link active" aria-current="page" href="#">Over Ons</a>
+                    <a class="nav-link" href="/artiesten">Artiesten</a>
+                    <a class="nav-link" href="/inschrijven">Inschrijven</a>
                 </div>
                 <a href="/login" class="btn btn-primary shadow-none">Login</a>
             </div>
@@ -51,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
+                <div class="col-md-6" data-aos="fade-down">
                     <img src="/assets/imgs/hero-image.png">
                 </div>
             </div>
@@ -59,7 +58,7 @@
         </div>
     </section>
     <div class="genres">
-        <div class="container text-center" style="padding-top: 25px;">
+        <div class="container text-center" style="padding-top: 25px;" data-aos="fade-left">
             <h2>Vier beste genres</h2>
             <p>We hebben nog veel meer!</p>
             <div class="row">
@@ -72,7 +71,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="image-container">
-                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/517/original/soloist.png?1644923584"
                             alt="Image 2" class="img-fluid">
                         <div class="image-text">Solo</div>
                     </div>
@@ -80,15 +79,15 @@
                 <div class="col-md-3">
                     <div class="image-container">
                         <a href="/artiesten/ensemble">
-                            <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
-                                alt="Image 3" class="img-fluid">
+                            <img src="https://dz8pdz0wfluv5.cloudfront.net/assets/ensemble.jpg" alt="Image 3"
+                                class="img-fluid">
                             <div class="image-text">Ensemble</div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="image-container">
-                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
+                        <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/668/original/5_Holiday_Traditions_to_try_this_year_%28400_%C3%97_400_px%29.png?1645537134"
                             alt="Image 4" class="img-fluid">
                         <div class="image-text">DJ's</div>
                     </div>
@@ -96,7 +95,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center mx-auto" style="padding-top: 10px;">
+            <div class="col-md-12 text-center mx-auto" style="padding-top: 25px;">
                 <a href="#" class="btn btn-primary">Bekijk genres</a>
             </div>
         </div>
@@ -105,7 +104,7 @@
         <div class="infotext text-center" style="padding-top: 25px;">
             <h2>Opkomende evenementen</h2>
             @foreach ($event as $events)
-                <div class="artist-container">
+                <div class="artist-container" data-aos="fade-up">
                     <div class="artist">
                         <img src="{{ $events->event_img }}" class="artist-image">
                         <div class="artist-details">
@@ -129,6 +128,99 @@
             </div>
         </div>
     </div>
+    <section id="reviews">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Ervaringen van onze klanten</h2>
+                    <p>We hebben al meer dan 500 artiesten geholpen met hun carrière. Hieronder zie je wat onze klanten van
+                        ons vinden.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="review">
+                        <div class="review-img">
+                            <img src="review1.jpg" alt="review 1">
+                        </div>
+                        <h3>John Doe</h3>
+                        <p>"Inivec heeft mij enorm geholpen met het vinden van optredens. Hun netwerk is fantastisch!"</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review">
+                        <div class="review-img">
+                            <img src="review2.jpg" alt="review 2">
+                        </div>
+                        <h3>Jane Doe</h3>
+                        <p>"Dankzij Inivec heb ik mijn eerste album kunnen uitbrengen. Ik ben ze eeuwig dankbaar."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review">
+                        <div class="review-img">
+                            <img src="review3.jpg" alt="review 3">
+                        </div>
+                        <h3>Bob Smith</h3>
+                        <p>"Inivec heeft mij geholpen met het vinden van een geschikte manager. Ik heb nu eindelijk de
+                            juiste persoon gevonden."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container text-center" style="padding-top: 25px;">
+        <h3>Nieuws van Inivec</h3>
+
+        <div class="row">
+            @foreach ($news as $news)
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top"
+                            src="https://www.bax-shop.nl/blog/wp-content/uploads/2018/07/blog_gratis_draaien.jpg"
+                            alt="Nieuwsbericht 1">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $news->naam }}</h5>
+                            <p class="card-text">{{ $news->small_bericht }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted text-center">Geplaatst op: {{ $news->created_at }}</small>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary">Lees meer</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted text-center">Bekijk alle nieuwsberichten &#8594;</p>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="why-choose">
+        <div class="container">
+            <h2>Waarom kiezen voor Inivec?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="path/to/image1.jpg" alt="Reden 1">
+                    <h3>Reden 1</h3>
+                    <p>Beschrijving van reden 1</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="path/to/image2.jpg" alt="Reden 2">
+                    <h3>Reden 2</h3>
+                    <p>Beschrijving van reden 2</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="path/to/image3.jpg" alt="Reden 3">
+                    <h3>Reden 3</h3>
+                    <p>Beschrijving van reden 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer-distributed">
 

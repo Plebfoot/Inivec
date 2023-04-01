@@ -319,6 +319,54 @@ section.hero {
     border-bottom-right-radius: .2rem
 }
 
+/* Reviews Section */
+
+#reviews {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+  }
+  
+  #reviews h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #reviews p {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  
+  .review {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .review-img {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .review-img img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .review h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .review p {
+    font-size: 18px;
+  }
+
 @media (max-width: 567px) {
 
     .navbar {
@@ -579,48 +627,3 @@ section.hero {
   }
 
 
-/* .container {
-    width: 100%;
-    min-height: 58vh;
-    background-image: linear-gradient(rgba(9, 0, 77, 0.65), rgba(9, 0, 77, 0.65)), url("../imgs/background.png");
-    background-size: cover;
-    background-position: center;
-    padding: 10px 8%;
-}
-
-.nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-
-.logo {
-    font-size: 50px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.logo a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav .ul {
-    list-style: none;
-    width: 100%;
-    text-align: right;
-    padding-right: 60px;
-}
-
-.nav .ul li {
-    display: inline-block;
-    margin: 10px 20px;
-
-}
-
-.nav .ul li a {
-    color: #fff;
-    text-decoration: none !important;
-} */
