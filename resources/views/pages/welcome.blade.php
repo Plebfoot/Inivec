@@ -137,7 +137,6 @@
             </div>
             <hr style="width: 50%;border-width: 3px;">
         </div>
-        test
     </div>
 
 
