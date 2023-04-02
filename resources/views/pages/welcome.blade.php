@@ -24,7 +24,11 @@
                     <a class="nav-link" href="/artiesten">Artiesten</a>
                     <a class="nav-link" href="/inschrijven">Inschrijven</a>
                 </div>
-                <a href="/login" class="btn btn-primary shadow-none">Login</a>
+                @if (Auth::check())
+                    <a href="/home" class="btn btn-primary shadow-none">Dashboard</a>
+                @else
+                    <a href="/login" class="btn btn-primary shadow-none">Login</a>
+                @endif
             </div>
         </div>
     </nav>
@@ -103,6 +107,9 @@
     <div class="events" id='events'>
         <div class="infotext text-center" style="padding-top: 25px;">
             <h2>Opkomende evenementen</h2>
+            <div class="col-md-12">
+                <a href="/events"><p class="text-muted">Bekijk alle evenementen &#8594;</p></a>
+            </div>
             @foreach ($event as $events)
                 <div class="artist-container" data-aos="fade-up">
                     <div class="artist">
@@ -117,7 +124,7 @@
                             <p class="biography">{{ $events->bio }}</p>
 
                             <div class="buttons">
-                                <a href="#" class="btn btn-primary">Bekijk meer</a>
+                                <a href="/events/{{ $events->eventname }}" class="btn btn-primary">Bekijk meer</a>
                             </div>
                         </div>
                     </div>
@@ -128,47 +135,45 @@
             </div>
         </div>
     </div>
-    <section id="reviews">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Ervaringen van onze klanten</h2>
-                    <p>We hebben al meer dan 500 artiesten geholpen met hun carrière. Hieronder zie je wat onze klanten van
-                        ons vinden.</p>
+    <div class="container">
+        <h2>Veelgestelde vragen</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Hoe kan ik een artiest boeken?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        Om een artiest te boeken, selecteer je eerst de gewenste artiest op onze website. Kies vervolgens
+                        een datum en het gewenste pakket. Vul tot slot het boekingsformulier in en bevestig je boeking.
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="review">
-                        <div class="review-img">
-                            <img src="review1.jpg" alt="review 1">
-                        </div>
-                        <h3>John Doe</h3>
-                        <p>"Inivec heeft mij enorm geholpen met het vinden van optredens. Hun netwerk is fantastisch!"</p>
-                    </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Kan ik mijn boeking annuleren?
+                        </button>
+                    </h5>
                 </div>
-                <div class="col-md-4">
-                    <div class="review">
-                        <div class="review-img">
-                            <img src="review2.jpg" alt="review 2">
-                        </div>
-                        <h3>Jane Doe</h3>
-                        <p>"Dankzij Inivec heb ik mijn eerste album kunnen uitbrengen. Ik ben ze eeuwig dankbaar."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="review">
-                        <div class="review-img">
-                            <img src="review3.jpg" alt="review 3">
-                        </div>
-                        <h3>Bob Smith</h3>
-                        <p>"Inivec heeft mij geholpen met het vinden van een geschikte manager. Ik heb nu eindelijk de
-                            juiste persoon gevonden."</p>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Ja, je kunt je boeking annuleren tot 48 uur voor de geplande datum. Neem contact met ons op als je
+                        je boeking wilt annuleren.
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <div class="container text-center" style="padding-top: 25px;">
         <h3>Nieuws van Inivec</h3>
 

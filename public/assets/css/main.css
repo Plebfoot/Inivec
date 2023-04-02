@@ -319,6 +319,17 @@ section.hero {
     border-bottom-right-radius: .2rem
 }
 
+/* FAQ Section */
+
+.card-header button:focus {
+    outline: none;
+  }
+  
+  .card-body {
+    background-color: #f5f5f5;
+    padding: 15px;
+  }
+
 /* Reviews Section */
 
 #reviews {
