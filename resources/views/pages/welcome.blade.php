@@ -133,99 +133,10 @@
             <div id='pagination' class="m-4">
                 {!! $event->fragment('events')->render() !!}
             </div>
+            <hr style="width: 50%;border-width: 3px;">
         </div>
     </div>
-    <div class="container">
-        <h2>Veelgestelde vragen</h2>
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            Hoe kan ik een artiest boeken?
-                        </button>
-                    </h5>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        Om een artiest te boeken, selecteer je eerst de gewenste artiest op onze website. Kies vervolgens
-                        een datum en het gewenste pakket. Vul tot slot het boekingsformulier in en bevestig je boeking.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Kan ik mijn boeking annuleren?
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Ja, je kunt je boeking annuleren tot 48 uur voor de geplande datum. Neem contact met ons op als je
-                        je boeking wilt annuleren.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container text-center" style="padding-top: 25px;">
-        <h3>Nieuws van Inivec</h3>
-
-        <div class="row">
-            @foreach ($news as $news)
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top"
-                            src="https://www.bax-shop.nl/blog/wp-content/uploads/2018/07/blog_gratis_draaien.jpg"
-                            alt="Nieuwsbericht 1">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $news->naam }}</h5>
-                            <p class="card-text">{{ $news->small_bericht }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted text-center">Geplaatst op: {{ $news->created_at }}</small>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-primary">Lees meer</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-muted text-center">Bekijk alle nieuwsberichten &#8594;</p>
-            </div>
-        </div>
-    </div>
-
-
-    <section id="why-choose">
-        <div class="container">
-            <h2>Waarom kiezen voor Inivec?</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="path/to/image1.jpg" alt="Reden 1">
-                    <h3>Reden 1</h3>
-                    <p>Beschrijving van reden 1</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="path/to/image2.jpg" alt="Reden 2">
-                    <h3>Reden 2</h3>
-                    <p>Beschrijving van reden 2</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="path/to/image3.jpg" alt="Reden 3">
-                    <h3>Reden 3</h3>
-                    <p>Beschrijving van reden 3</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <footer class="footer-distributed">
 

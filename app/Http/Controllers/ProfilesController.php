@@ -22,4 +22,9 @@ class ProfilesController extends Controller
 
         return view('profiles.book', compact('username'), ['artist' => $artist ]);
     }
+
+    public function event($eventnaam) {
+        $event = Event::where('eventname', $eventnaam)->first();
+        return view('profiles.event', compact('event'), ['event' => $event ]);
+    }
 }
