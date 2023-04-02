@@ -108,7 +108,9 @@
         <div class="infotext text-center" style="padding-top: 25px;">
             <h2>Opkomende evenementen</h2>
             <div class="col-md-12">
-                <a href="/events"><p class="text-muted">Bekijk alle evenementen &#8594;</p></a>
+                <a href="/events">
+                    <p class="text-muted">Bekijk alle evenementen &#8594;</p>
+                </a>
             </div>
             @foreach ($event as $events)
                 <div class="artist-container" data-aos="fade-up">
@@ -135,8 +137,9 @@
             </div>
             <hr style="width: 50%;border-width: 3px;">
         </div>
+        test
     </div>
-   
+
 
     <footer class="footer-distributed">
 
