@@ -166,6 +166,14 @@ section.hero {
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
+
+      .text-hero-bold {
+        color: var(--dark-brown);
+        font-size: var(--header-2);
+        font-weight: var(--font-weight-bold);
+        line-height: 74px;
+      }
+      
     .order-2 {
       order: 1;
     }
@@ -182,6 +190,7 @@ section.hero {
 
 .genre-wrapper {
     display: flex;
+    
 }
 
 .genre {
@@ -189,6 +198,13 @@ section.hero {
     width: 250px;
     margin-right: 20px;
 }
+
+@media (max-width: 767px) {
+    .genre {
+      width: 50%;
+      float: left;
+    }
+  }
 
 /* Events */
 
