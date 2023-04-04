@@ -8,7 +8,7 @@
     <!-- Navbar sectie -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
+        <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="/">
                 {{-- <img src="/assets/imgs/logo.jpg" alt="brand" width="120px"> --}}
                 <span>Inivec</span>
@@ -36,7 +36,7 @@
     <section class="hero">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 order-2 order-md-1">
                     <div class="copy" data-aos="fade-up">
                         <div class="text-label">
                             Vind en boek live muziek.
@@ -48,39 +48,38 @@
                             Ben je op zoek naar fantastische live muziek, een swingende band, een ervaren DJ of een
                             getalenteerde solo-artiest voor je feest, evenement of bruiloft?
                         </div>
-                        <div class="cta">
+                        <div class="btn-container">
                             <a href="/artiesten" class="btn btn-primary shadow-none">Bekijk artiesten</a>
-                            <a href="#" class="btn btn-secondary shadow-none ml-3">Plaats oproep</a>
-                        </div>
+                            <a href="#" class="btn btn-secondary shadow-none">Plaats oproep</a>
+                          </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-down">
-                    <img src="/assets/imgs/hero-image.png">
+                <div class="col-md-6 order-1 order-md-2" data-aos="fade-down">
+                    <img src="/assets/imgs/hero-image.png" class="img-fluid">
                 </div>
             </div>
-
         </div>
     </section>
     <div class="genres">
         <div class="container text-center" style="padding-top: 25px;" data-aos="fade-left">
             <h2>Vier beste genres</h2>
             <p>We hebben nog veel meer!</p>
-            <div class="row">
-                <div class="col-md-3">
+            <div class="genre-wrapper">
+                <div class="genre">
                     <div class="image-container">
                         <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
                             alt="Image 1" class="img-fluid">
                         <div class="image-text">Bands</div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="genre">
                     <div class="image-container">
                         <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/517/original/soloist.png?1644923584"
                             alt="Image 2" class="img-fluid">
                         <div class="image-text">Solo</div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="genre">
                     <div class="image-container">
                         <a href="/artiesten/ensemble">
                             <img src="https://dz8pdz0wfluv5.cloudfront.net/assets/ensemble.jpg" alt="Image 3"
@@ -89,7 +88,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="genre">
                     <div class="image-container">
                         <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/668/original/5_Holiday_Traditions_to_try_this_year_%28400_%C3%97_400_px%29.png?1645537134"
                             alt="Image 4" class="img-fluid">
@@ -98,9 +97,12 @@
                 </div>
             </div>
         </div>
+    </div>
         <div class="row">
             <div class="col-md-12 text-center mx-auto" style="padding-top: 25px;">
+                <div class="btn-container">
                 <a href="#" class="btn btn-primary">Bekijk genres</a>
+                </div>
             </div>
         </div>
     </div>
@@ -135,10 +137,47 @@
             <div id='pagination' class="m-4">
                 {!! $event->fragment('events')->render() !!}
             </div>
-            <hr style="width: 50%;border-width: 3px;">
+            <hr style="width: 50%;border-width: 2px;">
         </div>
     </div>
-
+   
+    {{-- 
+    <section class="how-our-services-help">
+        <div class="container">
+          <h2 class="how-our-services-help__title text-center">Hoe onze diensten helpen</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="how-our-services-help__item">
+                <div class="how-our-services-help__icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <h3 class="how-our-services-help__subtitle">Verbeter uw productiviteit</h3>
+                <p class="how-our-services-help__description">Onze diensten helpen u bij het stroomlijnen van uw processen, zodat u meer kunt doen in minder tijd.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="how-our-services-help__item">
+                <div class="how-our-services-help__icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <h3 class="how-our-services-help__subtitle">Verhoog uw omzet</h3>
+                <p class="how-our-services-help__description">Met onze diensten kunt u uw bedrijf laten groeien en uw omzet verhogen door betere klantenservice en efficiëntere processen.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="how-our-services-help__item">
+                <div class="how-our-services-help__icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <h3 class="how-our-services-help__subtitle">Verhoog uw klanttevredenheid</h3>
+                <p class="how-our-services-help__description">Onze diensten helpen u om beter te communiceren met uw klanten en hun behoeften beter te begrijpen, zodat u aan hun verwachtingen kunt voldoen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+--}}
 
     <footer class="footer-distributed">
 
