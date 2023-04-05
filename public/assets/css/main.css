@@ -184,7 +184,7 @@ section.hero {
 
 .genres {
     background-color: #fdfbfb;
-    height: 50%;
+    min-height: 50%;
     display: flex;
 }
 
@@ -199,10 +199,51 @@ section.hero {
     margin-right: 20px;
 }
 
-@media (max-width: 767px) {
+
+@media (max-width: 768px) {
     .genre {
-      width: 50%;
-      float: left;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    
+    .image-text {
+      position: static;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 992px) {
+    .genre {
+      width: 33.33%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+@media (max-width: 767px) {
+    .genre-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .genre {
+        width: calc(50% - 10px);
+        margin: 5px;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .image-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px;
     }
   }
 
@@ -372,52 +413,30 @@ section.hero {
 
 /* Reviews Section */
 
-#reviews {
-    background-color: #f7f7f7;
-    padding: 50px 0;
-  }
-  
-  #reviews h2 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  #reviews p {
-    font-size: 18px;
-    margin-bottom: 50px;
-  }
-  
-  .review {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-  }
-  
-  .review-img {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .review-img img {
+.circle {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    background-color: #f5168d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
   
-  .review h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  .circle i {
+    color: #fff;
   }
   
-  .review p {
-    font-size: 18px;
+  .pink {
+    background-color: #f5168d;
   }
 
+  .how-it-works p {
+        margin-top: 5px;
+        margin-bottom: 0;
+        font-size: 0.8em;
+  }
 @media (max-width: 567px) {
 
    
@@ -517,6 +536,10 @@ section.hero {
     font-weight: normal;
     margin: 0;
 }
+
+.container p {
+    margin-bottom: 0;
+  }
 
 /* Footer Center */
 

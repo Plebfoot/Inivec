@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
-  <meta content="Inivec" property="og:title" />
-    <meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
-    <meta content="https://www.inivec.nl" property="og:url" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<meta content="Inivec" property="og:title" />
+<meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
+<meta content="https://www.inivec.nl" property="og:url" />
+<meta content="#43B581" data-react-helmet="true" name="theme-color" />
 
 @section('content')
     <!-- Navbar sectie -->
@@ -55,7 +55,7 @@
                         <div class="btn-container">
                             <a href="/artiesten" class="btn btn-primary shadow-none">Bekijk artiesten</a>
                             <a href="#" class="btn btn-secondary shadow-none">Plaats oproep</a>
-                          </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 order-1 order-md-2" data-aos="fade-down">
@@ -100,15 +100,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-        <div class="row">
-            <div class="col-md-12 text-center mx-auto" style="padding-top: 25px;">
-                <div class="btn-container">
-                <a href="#" class="btn btn-primary">Bekijk genres</a>
+            <div class="row">
+                <div class="col-md-12 text-center mx-auto" style="padding-top: 25px;">
+                    <div class="btn-container">
+                        <a href="#" class="btn btn-primary">Bekijk genres</a>
+                    </div>
                 </div>
             </div>
         </div>
+
+    </div>
     </div>
     <div class="events" id='events'>
         <div class="infotext text-center" style="padding-top: 25px;">
@@ -144,44 +145,78 @@
             <hr style="width: 50%;border-width: 2px;">
         </div>
     </div>
-   
-    {{-- 
-    <section class="how-our-services-help">
+    <section id="how-it-works">
         <div class="container">
-          <h2 class="how-our-services-help__title text-center">Hoe onze diensten helpen</h2>
           <div class="row">
-            <div class="col-md-4">
-              <div class="how-our-services-help__item">
-                <div class="how-our-services-help__icon">
-                  <i class="fas fa-check"></i>
-                </div>
-                <h3 class="how-our-services-help__subtitle">Verbeter uw productiviteit</h3>
-                <p class="how-our-services-help__description">Onze diensten helpen u bij het stroomlijnen van uw processen, zodat u meer kunt doen in minder tijd.</p>
+            <div class="col-md-12 text-center">
+              <h2>Hoe werkt Inivec?</h2>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-12 text-center">
+              <div class="circle pink">
+                <i class="fas fa-search fa-2x"></i>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="how-our-services-help__item">
-                <div class="how-our-services-help__icon">
-                  <i class="fas fa-check"></i>
-                </div>
-                <h3 class="how-our-services-help__subtitle">Verhoog uw omzet</h3>
-                <p class="how-our-services-help__description">Met onze diensten kunt u uw bedrijf laten groeien en uw omzet verhogen door betere klantenservice en efficiëntere processen.</p>
+            <div class="col-md-9 col-sm-12">
+              <h3>Zoek een artiest</h3>
+              <p>Vind de artiest die het beste past bij jouw evenement</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-12 text-center">
+              <div class="circle pink">
+                <i class="fas fa-phone fa-2x"></i>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="how-our-services-help__item">
-                <div class="how-our-services-help__icon">
-                  <i class="fas fa-check"></i>
-                </div>
-                <h3 class="how-our-services-help__subtitle">Verhoog uw klanttevredenheid</h3>
-                <p class="how-our-services-help__description">Onze diensten helpen u om beter te communiceren met uw klanten en hun behoeften beter te begrijpen, zodat u aan hun verwachtingen kunt voldoen.</p>
+            <div class="col-md-9 col-sm-12">
+              <h3>Contacteer de artiest</h3>
+              <p>Neem contact op met de artiest en bespreek de details</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-12 text-center">
+              <div class="circle pink">
+                <i class="fas fa-hourglass-half fa-2x"></i>
               </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+              <h3>En wachten maar</h3>
+              <p>Leun achterover en wacht tot jouw evenement begint</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Heb je nog vragen? Neem gerust <a href="#">contact</a> met ons op!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <img src="jouw_afbeelding.png" alt="Inivec afbeelding">
             </div>
           </div>
         </div>
       </section>
+    {{-- <div class="container justify-content-between">
+        <div class="row">
+          <div class="col-sm-8">
+            <h3>Inschrijven bij onze nieuwsbrief:</h3>
+          </div>
+          <div class="col-sm-4 text-right">
+            <form action="jouw_php_script.php" method="post" class="form-inline">
+              <div class="form-group">
+                <label class="sr-only" for="email">E-mailadres</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Jouw e-mailadres" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Inschrijven</button>
+            </form>
+          </div>
+        </div>
+      </div> --}}
+     
+   
       
---}}
 
     <footer class="footer-distributed">
 
