@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
@@ -33,6 +33,7 @@
     @yield('content')
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     AOS.init();
 </script>

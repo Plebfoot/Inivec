@@ -161,26 +161,68 @@ section.hero {
     opacity: 1;
 }
 
+.section {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.about-section .has-shapes {
+    z-index: -1;
+}
+
+.has-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.about-section .has-shapes .shape-left {
+    position: relative;
+    bottom: -25%;
+ }
+
+ .about-section .has-shapes .shape-right {
+    position: relative;
+    right: -60%;
+    
+ }
+
+ #feature-1:hover .feature-item {
+    transform: scale(1.1);
+  }
+  
+  #feature-2:hover .feature-item {
+    transform: scale(1.1);
+  }
+  
+  #feature-3:hover .feature-item {
+    transform: scale(1.1);
+  }
+
 @media (max-width: 767px) {
-   section.hero {
+    section.hero {
         padding-left: 0 !important;
         padding-right: 0 !important;
-      }
+    }
 
-      .text-hero-bold {
+    .text-hero-bold {
         color: var(--dark-brown);
         font-size: var(--header-2);
         font-weight: var(--font-weight-bold);
         line-height: 74px;
-      }
-      
+    }
+
     .order-2 {
-      order: 1;
+        order: 1;
     }
+
     .order-md-1 {
-      order: 2;
+        order: 2;
     }
-  }
+}
 
 .genres {
     background-color: #fdfbfb;
@@ -190,7 +232,7 @@ section.hero {
 
 .genre-wrapper {
     display: flex;
-    
+
 }
 
 .genre {
@@ -199,45 +241,46 @@ section.hero {
     margin-right: 20px;
 }
 
-
 @media (max-width: 768px) {
     .genre {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 20px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
-    
+
     .image-text {
-      position: static;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px;
+        position: static;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
     }
-  }
-  
-  @media (min-width: 768px) and (max-width: 992px) {
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
     .genre {
-      width: 33.33%;
-      margin-right: 0;
-      margin-bottom: 20px;
+        width: 33.33%;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
-  }
+}
 
 @media (max-width: 767px) {
     .genre-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-      }
-      .genre {
+    }
+
+    .genre {
         width: calc(50% - 10px);
         margin: 5px;
-      }
-      .image-container img {
+    }
+
+    .image-container img {
         max-width: 100%;
         height: auto;
-      }
+    }
 
-      .image-text {
+    .image-text {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -245,7 +288,7 @@ section.hero {
         color: white;
         padding: 5px;
     }
-  }
+}
 
 /* Events */
 
@@ -255,7 +298,7 @@ section.hero {
     display: flex;
 }
 
-.artist-container  {
+.artist-container {
     display: flex !important;
     flex-wrap: wrap !important;
     padding-top: 20px !important;
@@ -284,7 +327,7 @@ section.hero {
 }
 
 .artist-details {
-    flex: 1 !important; 
+    flex: 1 !important;
     padding: 20px !important;
 }
 
@@ -306,7 +349,7 @@ section.hero {
 
 /* Pagination */
 
-#pagination a{
+#pagination a {
     color: #f5168d;
 }
 
@@ -400,46 +443,10 @@ section.hero {
     border-bottom-right-radius: .2rem
 }
 
-/* FAQ Section */
 
-.card-header button:focus {
-    outline: none;
-  }
-  
-  .card-body {
-    background-color: #f5f5f5;
-    padding: 15px;
-  }
-
-/* Reviews Section */
-
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #f5168d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .circle i {
-    color: #fff;
-  }
-  
-  .pink {
-    background-color: #f5168d;
-  }
-
-  .how-it-works p {
-        margin-top: 5px;
-        margin-bottom: 0;
-        font-size: 0.8em;
-  }
 @media (max-width: 567px) {
 
-   
+
 
     a.nav.link {
         margin-right: 7px 0;
@@ -452,15 +459,15 @@ section.hero {
 
     .btn-container {
         text-align: center;
-      }
-      
-      .btn {
+    }
+
+    .btn {
         font-size: 14px;
         margin-bottom: 10px;
         padding: 6px 12px;
         width: 70%;
         line-height: 1.2;
-      }
+    }
 
     .ms-3 {
         margin-left: 0 !important;
@@ -539,7 +546,7 @@ section.hero {
 
 .container p {
     margin-bottom: 0;
-  }
+}
 
 /* Footer Center */
 
@@ -630,7 +637,7 @@ section.hero {
     background-color: #f5168d;
 }
 
-.footer-icons a{
+.footer-icons a {
     padding-top: 7px;
 }
 
@@ -656,51 +663,49 @@ section.hero {
 
 @media only screen and (max-width: 768px) {
     .artist {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     .artist-image {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  
+
     .artist-details {
-      padding: 10px;
-      text-align: center;
+        padding: 10px;
+        text-align: center;
     }
-  
+
     .artist-name {
-      font-size: 20px;
+        font-size: 20px;
     }
-  
+
     .price-range {
-      font-size: 16px;
+        font-size: 16px;
     }
-  
+
     .biography {
-      font-size: 14px;
+        font-size: 14px;
     }
-  
+
     .buttons {
-      display: block;
+        display: block;
     }
-  
+
     .btn-profile {
-      width: 250px;
-      height: 40px;
-      font-size: 16px;
-      line-height: 40px;
-      border-radius: 20px;
-      margin: 2px;
+        width: 250px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        border-radius: 20px;
+        margin: 2px;
     }
-  
+
     .btn-bookprofile {
-      width: 250px;
-      height: 40px;
-      font-size: 16px;
-      line-height: 40px;
-      border-radius: 20px;
+        width: 250px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        border-radius: 20px;
     }
-  }
-
-
+}
