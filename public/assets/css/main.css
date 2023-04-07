@@ -182,25 +182,25 @@ section.hero {
 .about-section .has-shapes .shape-left {
     position: relative;
     bottom: -25%;
- }
+}
 
- .about-section .has-shapes .shape-right {
+.about-section .has-shapes .shape-right {
     position: relative;
     right: -60%;
-    
- }
 
- #feature-1:hover .feature-item {
+}
+
+#feature-1:hover .feature-item {
     transform: scale(1.1);
-  }
-  
-  #feature-2:hover .feature-item {
+}
+
+#feature-2:hover .feature-item {
     transform: scale(1.1);
-  }
-  
-  #feature-3:hover .feature-item {
+}
+
+#feature-3:hover .feature-item {
     transform: scale(1.1);
-  }
+}
 
 @media (max-width: 767px) {
     section.hero {
