@@ -24,13 +24,14 @@ Route::get('/', function () { return view('welcome'); });
 Route::get('/inschrijven', function () { return view('/pages/inschrijven'); });
 Route::get('/artiesten', function () { return view('/pages/artiesten'); });
 Route::get('/oproep/new', function () { return view('/pages/oproep'); });
-
+Route::get('/oproep/bedankt', function () { return view('/pages/thankyou'); })->name('artist_calls.thankyou');
 
 
 /*----------------Controller Routes---------------------*/
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/artiesten',[ArtistViewController::class, 'Artists']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
+Route::post('/oproep/new', [App\Http\Controllers\ArtistCallController::class, 'store'])->name('artist_calls.store');
 Route::get('/arsitesten/{username}/boeken', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
 Route::get('/artiesten/{username}/boeken', 'App\Http\Controllers\ProfilesController@boek')->name('booking');

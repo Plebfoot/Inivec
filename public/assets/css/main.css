@@ -204,14 +204,36 @@ section.hero {
 
 .event-section {
     padding: 10% 0;
-  }
-  
-  .event-container {
+}
+
+.event-container {
     max-width: 800px;
     margin: 0 auto;
-  }
+}
+
+.form {
+    background-color: #fdfbfb;
+}
+
+#oproepForm {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    max-width: 500px;
+    /* hier kun je de gewenste breedte instellen */
+    margin: 0 auto;
+    /* hiermee centreer je het formulier op de pagina */
+}
 
 @media (max-width: 767px) {
+    #oproepForm {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        max-width: 350px;
+        /* hier kun je de gewenste breedte instellen */
+        margin: 0 auto;
+        /* hiermee centreer je het formulier op de pagina */
+    }
+
     section.hero {
         padding-left: 0 !important;
         padding-right: 0 !important;
