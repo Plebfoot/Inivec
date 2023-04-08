@@ -19,10 +19,7 @@
 
 
     <!-- Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -30,10 +27,85 @@
 </head>
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+     <!-- Navbar sectie -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="/">
+                {{-- <img src="/assets/imgs/logo.jpg" alt="brand" width="120px"> --}}
+                <span>Inivec</span>
+            </a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bx bx-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Over Ons</a>
+                    <a class="nav-link" href="/artiesten">Artiesten</a>
+                    <a class="nav-link" href="/inschrijven">Inschrijven</a>
+                </div>
+                @if (Auth::check())
+                    <a href="/home" class="btn btn-primary shadow-none">Dashboard</a>
+                @else
+                    <a href="/login" class="btn btn-primary shadow-none">Login</a>
+                @endif
+            </div>
+        </div>
+    </nav>
+
     @yield('content')
+
+     <!-- Footer sectie -->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3><span>Inivec</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2023 <strong>Inivec</strong> All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span></span>
+                    Nederland</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>--</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:klantenservice@inivec.nl">klantenservice@inivec.nl</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Over Inivec</span>
+                <strong>Inivec</strong> is een bedrijf dat zich richt op beginnende artiesten.
+                Wij helpen artiesten om een leuk optreden te kunnen geven aan jullie.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     AOS.init();
 </script>

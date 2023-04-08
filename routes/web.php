@@ -23,6 +23,7 @@ use App\Http\Controllers\ArtistViewController;
 Route::get('/', function () { return view('welcome'); });
 Route::get('/inschrijven', function () { return view('/pages/inschrijven'); });
 Route::get('/artiesten', function () { return view('/pages/artiesten'); });
+Route::get('/oproep/new', function () { return view('/pages/oproep'); });
 
 
 
