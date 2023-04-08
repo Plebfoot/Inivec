@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ArtistCall;
 use Illuminate\Http\Request;
+use Greggilbert\Recaptcha\Facades\Recaptcha;
 
 class ArtistCallController extends Controller
 {
@@ -41,6 +42,7 @@ class ArtistCallController extends Controller
             'contact_email' => 'required|email',
             'contact_phone' => 'required',
             'can_call' => 'required|boolean',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
     
         // Maak een nieuw ArtistCall-model aan met de ingediende gegevens

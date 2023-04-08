@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <meta content="Inivec" property="og:title" />
 <meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
 <meta content="https://www.inivec.nl" property="og:url" />
@@ -145,7 +146,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-
+            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
             <button type="submit" class="btn btn-primary">Opslaan</button>
         </form>
     </div>
