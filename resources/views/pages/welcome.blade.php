@@ -1,12 +1,15 @@
 @extends('layouts.layout')
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
-<meta content="Inivec" property="og:title" />
-<meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
-<meta content="https://www.inivec.nl" property="og:url" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <meta content="Inivec" property="og:title" />
+    <meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
+    <meta content="https://www.inivec.nl" property="og:url" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+
+</head>
 
 @section('content')
     <!-- Hero Sectie  -->
@@ -100,7 +103,7 @@
                             vinden voor elk evenement. Van bruiloften tot bedrijfsfeesten, festivals tot intieme concerten,
                             we hebben de perfecte artiesten voor elke gelegenheid.</p>
                         <p></p>
-                         {{-- <a class="btn btn-primary mt-4" href="about.html">Know About Us</a> --}}
+                        {{-- <a class="btn btn-primary mt-4" href="about.html">Know About Us</a> --}}
                     </div>
                 </div>
                 <div class="col-lg-7 text-center text-lg-end" data-aos="fade-left">
@@ -109,8 +112,8 @@
                 </div>
             </div>
             <div class="has-shapes">
-                <svg class="shape shape-left text-light" width="381" height="443" viewBox="0 0 381 443"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="shape shape-left text-light" width="381" height="443" viewBox="0 0 381 443" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M334.266 499.007C330.108 469.108 304.151 446.496 276.261 435.921C248.372 425.346 218.077 424.035 188.666 419.32C159.254 414.589 128.795 405.375 108.664 383.129C72.8533 343.535 83.3445 282.01 77.7634 228.587C69.3017 147.754 15.4873 73.3967 -58.0001 40.9907"
                         stroke="currentColor" stroke-miterlimit="10"></path>
@@ -150,7 +153,8 @@
                     <h2 class="section-title text-center">
                         Hoe werkt <a style="color:var(--primary)">Inivec</a>
                     </h2>
-                    <p class="section-sub-title text-center">Ontdek de kracht van Inivec - eenvoudig, snel en effectief.</p>
+                    <p class="section-sub-title text-center">Ontdek de kracht van Inivec - eenvoudig, snel en effectief.
+                    </p>
                 </div>
                 <!-- End of Section Title -->
                 <div class="row">
@@ -235,5 +239,4 @@
             </div>
         </div>
     </div>
-
-   @endsection
+@endsection
