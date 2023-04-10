@@ -37,11 +37,22 @@ class ArtistCallController extends Controller
             'genre' => 'required',
             'event_date' => 'required|date',
             'comments' => 'nullable',
-            'budget' => 'nullable|numeric',
+            'budget' => 'nullable|numeric|required',
             'contact_name' => 'required',
             'contact_email' => 'required|email',
             'contact_phone' => 'required',
             'can_call' => 'required|boolean',
+        ] , [
+            'occasion.required' => 'Kies een gelegenheid',
+            'location.required' => 'Please select a date',
+            'act_type.required' => 'Please select a time',
+            'genre.required' => 'Please enter a message',
+            'event_date.required' => 'Please enter your name',
+            'budget.required' => 'Please enter a valid email address',
+            'contact_name.required' => 'Please enter your phone number',
+            'contact_email.required' => 'Please enter your phone number',
+            'contact_phone.required' => 'Please enter your phone number',
+            'can_call.required' => 'Please enter your phone number',
         ]);
     
         // Maak een nieuw ArtistCall-model aan met de ingediende gegevens

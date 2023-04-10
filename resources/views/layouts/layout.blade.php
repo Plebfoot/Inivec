@@ -83,6 +83,18 @@
 
 <script>
     AOS.init();
+    function showOther() {
+  var otherOption = document.querySelector("#occasion option[value='anders']");
+  var otherInput = document.querySelector("#other-occasion");
+
+  if (otherOption && otherInput) { // controleer of beide elementen bestaan
+    if (otherOption.selected) {
+      otherInput.style.display = "block";
+    } else {
+      otherInput.style.display = "none";
+    }
+  }
+}
 </script>
 
 </html>

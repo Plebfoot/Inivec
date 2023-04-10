@@ -37,20 +37,33 @@
     </nav>
 
     <div class="form">
-        <form id='oproepForm' method="POST" action="{{ route('artist_calls.store') }}">
+        <form id='oproepForm' method="POST" action="{{ route('artist_calls.store') }}" novalidate>
             @csrf
 
             <div class="form-group">
                 <label for="occasion">Gelegenheid:</label>
-                <input type="text" class="form-control @error('occasion') is-invalid @enderror" id="occasion"
-                    name="occasion" value="{{ old('occasion') }}" required>
+                <select class="form-control @error('occasion') is-invalid @enderror" id="occasion" name="occasion" required>
+                    <option value="" selected disabled>Kies een gelegenheid</option>
+                    <option value="Bruiloft" {{ old('occasion') == 'Bruiloft' ? 'selected' : '' }}>Bruiloft</option>
+                    <option value="Bedrijfsfeest" {{ old('occasion') == 'Bedrijfsfeest' ? 'selected' : '' }}>Bedrijfsfeest</option>
+                    <option value="Privé feest" {{ old('occasion') == 'Privé feest' ? 'selected' : '' }}>Privé feest</option>
+                    <option value="Kroeg" {{ old('occasion') == 'Kroeg' ? 'selected' : '' }}>Kroeg</option>
+                    <option value="Festival" {{ old('occasion') == 'Festival' ? 'selected' : '' }}>Festival</option>
+                    <option value="Receptie" {{ old('occasion') == 'Receptie' ? 'selected' : '' }}>Receptie</option>
+                    <option value="Club" {{ old('occasion') == 'Club' ? 'selected' : '' }}>Club</option>
+                    <option value="Kerst & Nieuwjaar" {{ old('occasion') == 'Kerst & Nieuwjaar' ? 'selected' : '' }}>Kerst & Nieuwjaar</option>
+                    <option value="Anders" {{ old('occasion') == 'Anders' ? 'selected' : '' }}>Anders</option>
+                </select>
+                <div class="mt-3" id="occasion_other_div" style="display:none">
+                    <input type="text" class="form-control" id="occasion_other" name="occasion_other" placeholder="Anders, namelijk">
+                </div>
                 @error('occasion')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group">
-                <label for="location">Locatie:</label>
+                <label for="location">Locatie: <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('location') is-invalid @enderror" id="location"
                     name="location" value="{{ old('location') }}" required>
                 @error('location')
@@ -59,7 +72,7 @@
             </div>
 
             <div class="form-group">
-                <label for="act_type">Type act:</label>
+                <label for="act_type">Type act: <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('act_type') is-invalid @enderror" id="act_type"
                     name="act_type" value="{{ old('act_type') }}" required>
                 @error('act_type')
@@ -68,7 +81,7 @@
             </div>
 
             <div class="form-group">
-                <label for="genre">Genre:</label>
+                <label for="genre">Genre: <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('genre') is-invalid @enderror" id="genre"
                     name="genre" value="{{ old('genre') }}" required>
                 @error('genre')
@@ -77,7 +90,7 @@
             </div>
 
             <div class="form-group">
-                <label for="event_date">Datum van het evenement:</label>
+                <label for="event_date">Datum van het evenement: <span class="text-danger">*</span></label>
                 <input type="date" class="form-control @error('event_date') is-invalid @enderror" id="event_date"
                     name="event_date" value="{{ old('event_date') }}" required>
                 @error('event_date')
@@ -86,7 +99,7 @@
             </div>
 
             <div class="form-group">
-                <label for="comments">Opmerkingen:</label>
+                <label for="comments">Opmerkingen: <span class="text-danger">*</span></label>
                 <textarea class="form-control @error('comments') is-invalid @enderror" id="comments" name="comments">{{ old('comments') }}</textarea>
                 @error('comments')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -94,7 +107,7 @@
             </div>
 
             <div class="form-group">
-                <label for="budget">Budget:</label>
+                <label for="budget">Budget: <span class="text-danger">*</span></label>
                 <input type="number" step="0.01" class="form-control @error('budget') is-invalid @enderror"
                     id="budget" name="budget" value="{{ old('budget') }}">
                 @error('budget')
@@ -103,7 +116,7 @@
             </div>
 
             <div class="form-group">
-                <label for="contact_name">Naam contactpersoon:</label>
+                <label for="contact_name">Naam contactpersoon: <span class="text-danger">*</span></label>
                 <input type="text" class="form-control @error('contact_name') is-invalid @enderror" id="contact_name"
                     name="contact_name" value="{{ old('contact_name') }}" required>
                 @error('contact_name')
@@ -112,7 +125,7 @@
             </div>
 
             <div class="form-group">
-                <label for="contact_email">Email contactpersoon:</label>
+                <label for="contact_email">Email contactpersoon: <span class="text-danger">*</span></label>
                 <input type="email" class="form-control @error('contact_email') is-invalid @enderror" id="contact_email"
                     name="contact_email" value="{{ old('contact_email') }}" required>
                 @error('contact_email')
@@ -121,7 +134,7 @@
             </div>
 
             <div class="form-group">
-                <label for="contact_phone">Telefoon contactpersoon:</label>
+                <label for="contact_phone">Telefoon contactpersoon: <span class="text-danger">*</span></label>
                 <input type="tel" class="form-control @error('contact_phone') is-invalid @enderror" id="contact_phone"
                     name="contact_phone" value="{{ old('contact_phone') }}" required>
                 @error('contact_phone')
@@ -130,7 +143,7 @@
             </div>
 
             <div class="form-group">
-                <label for="can_call">Kan de artiest bellen:</label><br>
+                <label for="can_call">Kan de artiest bellen: <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="can_call" id="can_call_yes" value="1"
                         @if (old('can_call') == '1') checked @endif>
@@ -149,4 +162,5 @@
             <button type="submit" class="btn btn-primary">Opslaan</button>
         </form>
     </div>
+    
 @endsection
