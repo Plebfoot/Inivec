@@ -13,7 +13,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid justify-content-between">
             <a class="navbar-brand" href="/">
-                {{-- <img src="/assets/imgs/logo.jpg" alt="brand" width="120px"> --}}
                 <span>Inivec</span>
             </a>
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"

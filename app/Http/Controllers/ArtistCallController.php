@@ -55,8 +55,6 @@ class ArtistCallController extends Controller
             'contact_phone.required' => 'Voer een telefoonnummer in',
             'can_call.required' => 'Geef aan of er telefonisch contact opgenomen mag worden',
         ]);
-
-        dd($validated);
     
         $artistCall = ArtistCall::create($validated);
     
