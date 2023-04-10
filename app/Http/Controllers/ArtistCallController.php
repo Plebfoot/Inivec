@@ -58,14 +58,13 @@ class ArtistCallController extends Controller
     
         $artistCall = ArtistCall::create($validated);
     
-        if ($request->has('other_occasion') && $request->other_occasion !== "") {
-            $artistCall->other_occasion = $request->other_occasion;
+        if ($request->has('other_occasion') && $request->other_occasion !== "" && $request->occasion === 'Anders') {
+            $artistCall->occasion = $request->other_occasion;
             $artistCall->save();
         }
     
         return redirect()->route('artist_calls.thankyou', $artistCall);
     }
-    
 
     /**
      * Display the specified resource.
