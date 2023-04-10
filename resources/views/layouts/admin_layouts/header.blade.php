@@ -23,7 +23,7 @@
         @php($profile_img = Auth::user()->profile_img)
         <a href="/" class="logo">Inivec</a>
         <ul>
-            <li><a href="">Oproepen</a></li>
+            <li><a href="/calls">Oproepen</a></li>
         </ul>
         <img src="@if ($profile_img == null) {{ asset('storage/profile_images/person.jpg') }}  @else {{ asset("storage/$profile_img") }} @endif "
             onclick="toggleMenu()" class="user-pic">

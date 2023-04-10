@@ -8,6 +8,23 @@
     width: 35%;
 }
 
+.btn-primary {
+  background-color: #f5168d!important;
+  border: none;
+}
+
+.btn-primary:focus {
+  background-color: var(#f155a8)!important;
+}
+
+.btn-primary:hover {
+  background-color: var(#f155a8)!important;
+}
+
+.btn-primary:active {
+  background-color: var(#f155a8) !important;
+}
+
 #input {
     padding-top: 10px;
 }
@@ -138,6 +155,104 @@ nav ul li a:hover {
 .sub-menu-link:hover p {
   font-weight: 600;
 }
+
+/* Pagination */
+
+#pagination a {
+  color: #f5168d;
+}
+
+.pagination {
+  display: flex!important;
+  justify-content: center;
+  list-style: none!important;
+  padding-bottom: 10px;
+  --bs-pagination-border-width: 0px!important;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .page-link {
+      transition: none
+  }
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: #f5168d !important;
+  background-color: #e9ecef !important;
+  border-color: #dee2e6 !important;
+}
+
+.page-link:focus {
+  z-index: 3;
+  color: #f5168d !important;
+  background-color: #e9ecef !important;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+}
+
+.page-item:not(:first-child) .page-link {
+  margin-left: -1px
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #f5168d !important;
+  border-color: #f5168d !important;
+}
+
+.page-item.disabled .page-link {
+  color: #ad5050 !important;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #dee2e6
+}
+
+.page-link {
+  padding: .375rem .75rem
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem
+}
+
+.pagination-lg .page-link {
+  padding: .75rem 1.5rem;
+  font-size: 1.25rem
+}
+
+.pagination-lg .page-item:first-child .page-link {
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem
+}
+
+.pagination-lg .page-item:last-child .page-link {
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem
+}
+
+.pagination-sm .page-link {
+  padding: .25rem .5rem;
+  font-size: .875rem
+}
+
+.pagination-sm .page-item:first-child .page-link {
+  border-top-left-radius: .2rem;
+  border-bottom-left-radius: .2rem
+}
+
+.pagination-sm .page-item:last-child .page-link {
+  border-top-right-radius: .2rem;
+  border-bottom-right-radius: .2rem
+}
+
 
 footer {
   bottom: 0;

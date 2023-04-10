@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\ArtistController;
-use App\Http\Controllers\EventViewController;
+use App\Http\Controllers\OproepController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistViewController;
 
@@ -42,4 +42,4 @@ Route::post('/users/profile_management', [App\Http\Controllers\HomeController::c
 /*----------------Auth Routes---------------------*/
 Auth::routes();
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');;
-Route::group(['middleware' => 'auth'], function() {Route::get('/instellingen', function() {return view('/users/profile_management'); }); });
+Route::group(['middleware' => 'auth'], function() {Route::get('/instellingen', function() {return view('/users/profile_management');  }); Route::get('/calls',[OproepController::class, 'Index']); });
