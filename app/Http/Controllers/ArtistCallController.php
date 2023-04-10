@@ -29,7 +29,6 @@ class ArtistCallController extends Controller
      */
     public function store(Request $request)
     {
-        // Valideer het ingediende formulier
         $validated = $request->validate([
             'occasion' => 'required',
             'location' => 'required',
@@ -42,37 +41,33 @@ class ArtistCallController extends Controller
             'contact_email' => 'required|email',
             'contact_phone' => 'required',
             'can_call' => 'required|boolean',
-        ] , [
+        ], [
             'occasion.required' => 'Kies een gelegenheid',
-            'location.required' => 'Please select a date',
-            'act_type.required' => 'Please select a time',
-            'genre.required' => 'Please enter a message',
-            'event_date.required' => 'Please enter your name',
-            'budget.required' => 'Please enter a valid email address',
-            'contact_name.required' => 'Please enter your phone number',
-            'contact_email.required' => 'Please enter your phone number',
-            'contact_phone.required' => 'Please enter your phone number',
-            'can_call.required' => 'Please enter your phone number',
+            'location.required' => 'Selecteer een locatie',
+            'act_type.required' => 'Selecteer een type act',
+            'genre.required' => 'Selecteer een genre',
+            'event_date.required' => 'Selecteer een datum',
+            'budget.required' => 'Voer een budget in',
+            'budget.numeric' => 'Het budget moet een getal zijn',
+            'contact_name.required' => 'Voer een contactpersoon in',
+            'contact_email.required' => 'Voer een e-mailadres in',
+            'contact_email.email' => 'Voer een geldig e-mailadres in',
+            'contact_phone.required' => 'Voer een telefoonnummer in',
+            'can_call.required' => 'Geef aan of er telefonisch contact opgenomen mag worden',
         ]);
+
+        dd($validated);
     
-        // Maak een nieuw ArtistCall-model aan met de ingediende gegevens
-        $artistCall = new ArtistCall;
-        $artistCall->occasion = $validated['occasion'];
-        $artistCall->location = $validated['location'];
-        $artistCall->act_type = $validated['act_type'];
-        $artistCall->genre = $validated['genre'];
-        $artistCall->event_date = $validated['event_date'];
-        $artistCall->comments = $validated['comments'];
-        $artistCall->budget = $validated['budget'];
-        $artistCall->contact_name = $validated['contact_name'];
-        $artistCall->contact_email = $validated['contact_email'];
-        $artistCall->contact_phone = $validated['contact_phone'];
-        $artistCall->can_call = $validated['can_call'];
-        $artistCall->save();
+        $artistCall = ArtistCall::create($validated);
     
-        // Redirect naar de pagina om de nieuwe ArtistCall weer te geven
+        if ($request->has('other_occasion') && $request->other_occasion !== "") {
+            $artistCall->other_occasion = $request->other_occasion;
+            $artistCall->save();
+        }
+    
         return redirect()->route('artist_calls.thankyou', $artistCall);
     }
+    
 
     /**
      * Display the specified resource.

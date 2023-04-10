@@ -41,7 +41,7 @@
             @csrf
 
             <div class="form-group">
-                <label for="occasion">Gelegenheid:</label>
+                <label for="occasion">Gelegenheid: <span class="text-danger">*</span></label>
                 <select class="form-control @error('occasion') is-invalid @enderror" id="occasion" name="occasion" required>
                     <option value="" selected disabled>Kies een gelegenheid</option>
                     <option value="Bruiloft" {{ old('occasion') == 'Bruiloft' ? 'selected' : '' }}>Bruiloft</option>
@@ -54,8 +54,8 @@
                     <option value="Kerst & Nieuwjaar" {{ old('occasion') == 'Kerst & Nieuwjaar' ? 'selected' : '' }}>Kerst & Nieuwjaar</option>
                     <option value="Anders" {{ old('occasion') == 'Anders' ? 'selected' : '' }}>Anders</option>
                 </select>
-                <div class="mt-3" id="occasion_other_div" style="display:none">
-                    <input type="text" class="form-control" id="occasion_other" name="occasion_other" placeholder="Anders, namelijk">
+                <div id="other-occasion" style="display: none;">
+                    <input type="text" class="form-control mt-2" id="other-occasion-input" name="other_occasion" placeholder="Anders, vul hier in">
                 </div>
                 @error('occasion')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -73,12 +73,17 @@
 
             <div class="form-group">
                 <label for="act_type">Type act: <span class="text-danger">*</span></label>
-                <input type="text" class="form-control @error('act_type') is-invalid @enderror" id="act_type"
-                    name="act_type" value="{{ old('act_type') }}" required>
+                <select class="form-control @error('act_type') is-invalid @enderror" id="act_type" name="act_type" required>
+                  <option value="" selected disabled>Kies een optie</option>
+                  <option value="DJ" {{ old('act_type') == 'DJ' ? 'selected' : '' }}>DJ</option>
+                  <option value="Band" {{ old('act_type') == 'Band' ? 'selected' : '' }}>Band</option>
+                  <option value="Solo" {{ old('act_type') == 'Solo' ? 'selected' : '' }}>Solo</option>
+                  <option value="Ensemble" {{ old('act_type') == 'Ensemble' ? 'selected' : '' }}>Ensemble</option>
+                </select>
                 @error('act_type')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                  <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+              </div>
 
             <div class="form-group">
                 <label for="genre">Genre: <span class="text-danger">*</span></label>
@@ -99,7 +104,7 @@
             </div>
 
             <div class="form-group">
-                <label for="comments">Opmerkingen: <span class="text-danger">*</span></label>
+                <label for="comments">Opmerkingen:</label>
                 <textarea class="form-control @error('comments') is-invalid @enderror" id="comments" name="comments">{{ old('comments') }}</textarea>
                 @error('comments')
                     <div class="invalid-feedback">{{ $message }}</div>

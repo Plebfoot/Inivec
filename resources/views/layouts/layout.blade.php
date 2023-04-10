@@ -15,12 +15,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome/css/font-awesome.min.css') }}">
- 
+
 
 
 
     <!-- Javascript -->
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -28,10 +28,10 @@
 </head>
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
- 
+
     @yield('content')
 
-     <!-- Footer sectie -->
+    <!-- Footer sectie -->
     <footer class="footer-distributed">
 
         <div class="footer-left">
@@ -83,18 +83,16 @@
 
 <script>
     AOS.init();
-    function showOther() {
-  var otherOption = document.querySelector("#occasion option[value='anders']");
-  var otherInput = document.querySelector("#other-occasion");
+    var occasionSelect = document.getElementById("occasion");
+    var otherOccasionDiv = document.getElementById("other-occasion");
 
-  if (otherOption && otherInput) { // controleer of beide elementen bestaan
-    if (otherOption.selected) {
-      otherInput.style.display = "block";
-    } else {
-      otherInput.style.display = "none";
-    }
-  }
-}
+    occasionSelect.addEventListener("change", function() {
+        if (occasionSelect.value === "Anders") {
+            otherOccasionDiv.style.display = "block";
+        } else {
+            otherOccasionDiv.style.display = "none";
+        }
+    });
 </script>
 
 </html>
