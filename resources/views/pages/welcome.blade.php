@@ -71,7 +71,7 @@
         <div class="container text-center" style="padding-top: 25px;">
             <h2>Vier beste genres</h2>
             <p>We hebben nog veel meer!</p>
-            <div class="genre-wrapper" style="padding-top: 25px;" data-aos="fade-left">
+            <div class="genre-wrapper justify-content-center" style="padding-top: 25px;" data-aos="fade-left">
                 <div class="genre">
                     <div class="image-container">
                         <img src="https://dz8pdz0wfluv5.cloudfront.net/production/pictures/images/000/047/515/original/bands.png?1644923887"
