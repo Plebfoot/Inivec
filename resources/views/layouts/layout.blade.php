@@ -40,7 +40,7 @@
             <p class="footer-links">
                 <a href="#">Home</a>
                 |
-                <a href="#">About</a>
+                <a href="/terms">Algemene Voorwaarden</a>
                 |
                 <a href="#">Contact</a>
             </p>
