@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\ArtistController;
-use App\Http\Controllers\OproepController;
+use App\Http\Controllers\ArtistCallController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtistViewController;
 
@@ -31,7 +31,7 @@ Route::get('/oproep/bedankt', function () { return view('/pages/thankyou'); })->
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/artiesten',[ArtistViewController::class, 'Artists']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
-Route::post('/oproep/new', 'App\Http\Controllers\ArtistController@store')->name('artist_calls.store');
+Route::post('/oproep/new', [ArtistCallController::class, 'store'])->name('artist_calls.store');
 Route::get('/arsitesten/{username}/boeken', [ArtistController::class, 'Index']);
 Route::get('/artiesten/{username}', 'App\Http\Controllers\ProfilesController@show')->name('profiles');
 Route::get('/artiesten/{username}/boeken', 'App\Http\Controllers\ProfilesController@boek')->name('booking');
