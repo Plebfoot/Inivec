@@ -31,7 +31,7 @@ class ArtistCallController extends Controller
         // Haal de 'occasion' input op uit het request
         $occasion = $request->input('occasion');
 
-        
+
 
         // Als de 'occasion' gelijk is aan 'Anders'
         if ($occasion === 'Anders') {
@@ -39,7 +39,7 @@ class ArtistCallController extends Controller
             $occasion = $request->input('other_occasion');
         }
 
-       
+
         // Valideer de input data van het request
         $validatedData = $request->validate([
             'occasion' => 'required',
@@ -64,10 +64,11 @@ class ArtistCallController extends Controller
                 'contact_email.required' => 'Voer een e-mailadres in',
                 'contact_email.email' => 'Voer een geldig e-mailadres in',
                 'contact_phone.required' => 'Voer een telefoonnummer in',
-                'can_be_called.required' => 'Geef aan of er telefonisch contact opgenomen mag worden'
+                'can_be_called.required' => 'Geef aan of er telefonisch contact opgenomen mag worden',
+                'can_be_called.in' => 'Kies of er wel of niet telefonisch contact opgenomen mag worden',
             ]);
 
-          
+
 
         // Maak een nieuwe FormEntry instantie met de gevalideerde data en sla deze op in de database
         $formEntry = new FormEntry($validatedData);

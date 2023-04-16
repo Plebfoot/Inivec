@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Oproep extends Model
 {
-    protected $table = 'artist_calls';
+    protected $table = 'form_entries';
 }

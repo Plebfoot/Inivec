@@ -40,10 +40,7 @@
         <div style="width:500px;margin:auto;padding-top: 50px;">
             <h1 style="text-align:center;">Plaats een oproep voor de artiesten van Inivec</h1>
             <hr>
-            <p style="text-align:center;">Plaats gratis een oproep bij Inivec. Wij sturen jouw oproep door naar zorgvuldig
-                uitgezochte artiesten uit onze grote database. De artiesten zullen binnen 24 uur aangeven of ze beschikbaar
-                zijn. Kies vervolgens zelf met welke artiest je contact opneemt. De oproep is de snelste manier om een
-                artiest te vinden voor jouw evenement!</p>
+            <p style="text-align:center;">Plaats gratis een oproep bij Inivec en wij sturen jouw verzoek door naar zorgvuldig geselecteerde artiesten uit onze uitgebreide database. Binnen 24 uur laten de artiesten weten of ze beschikbaar zijn voor jouw evenement. Zo heb je snel en gemakkelijk toegang tot een groot aantal getalenteerde artiesten en kun je zelf kiezen met wie je contact opneemt. Maak gebruik van onze oproepdienst en vind binnen no-time de perfecte artiest voor jouw evenement!</p>
         </div>
         <form id='oproepForm' method="POST" action="{{ route('artist_calls.store') }}" novalidate>
             @csrf
@@ -172,19 +169,20 @@
             <div class="form-group">
                 <label for="can_be_called">Kan de artiest bellen: <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="can_be_called" id="can_call_yes"
-                        value="Ja" @if (old('can_be_called') == '1') checked @endif>
+                    <input class="form-check-input" type="radio" name="can_be_called" id="1"
+                        value="1" @if (old('can_be_called') == '1') checked @endif required>
                     <label class="form-check-label" for="can_call_yes">Ja</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="can_be_called" id="can_call_no" value="Nee"
-                        @if (old('can_be_called') == '0') checked @endif>
+                    <input class="form-check-input" type="radio" name="can_be_called" id="can_call_no" value="0"
+                        @if (old('can_be_called') == '0') checked @endif required>
                     <label class="form-check-label" for="can_call_no">Nee</label>
                 </div>
                 @error('can_be_called')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+            
 
             <button type="submit" class="btn btn-primary">Verzenden</button>
             <br>

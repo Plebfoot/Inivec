@@ -101,6 +101,16 @@ a.nav-link {
     color: var(--dark-brown) !important;
 }
 
+.navbar-brand {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
 /* Hero Section */
 
 section.hero {
@@ -225,6 +235,12 @@ section.hero {
 }
 
 @media (max-width: 767px) {
+    .navbar {
+        padding: 35px 0;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
     #oproepForm {
         padding-top: 25px;
         padding-bottom: 25px;
