@@ -29,13 +29,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($oproep as $oproepen)
+                    @foreach ($call as $calls)
                         <tr>
                             <th scope="row" style="padding-top:10px;">{{ $loop->iteration }}</th>
-                            <td>{{ $oproepen->occasion }}</td>
-                            <td>€{{ $oproepen->budget }}</td>
-                            <td>{{ $oproepen->location }}</td>
-                            <td>{{ $oproepen->act_type }}</td>
+                            <td>{{ $calls->occasion }}</td>
+                            <td>€{{ $calls->budget }}</td>
+                            <td>{{ $calls->location }}</td>
+                            <td>{{ $calls->act_type }}</td>
                             <td>
                                 <div class="buttons">
                                     <a href="/calls/{{ $loop->iteration }}" class="btn btn-primary">Bekijk meer</a>
@@ -46,7 +46,7 @@
                 </tbody>
             </table>
             <div id='pagination' class="m-4">
-                {!! $oproep->fragment('calls')->render() !!}
+                {!! $call->fragment('calls')->render() !!}
             </div>
         </div>
     </div>

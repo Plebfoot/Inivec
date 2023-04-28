@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.layout')
 
 <title>Inivec - {{ $username->username }}</title>
 <script src="/assets/js/main.js"></script>

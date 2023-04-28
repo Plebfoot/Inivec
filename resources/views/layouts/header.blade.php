@@ -13,6 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <meta content="Inivec" property="og:title" />
+    <meta content="Maak je feest legendarisch met onze artiesten!" property="og:description" />
+    <meta content="https://www.inivec.nl" property="og:url" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome/css/font-awesome.min.css') }}">
 
@@ -20,31 +28,31 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid justify-content-between">
-            <a class="navbar-brand" href="/">
-                {{-- <img src="/assets/imgs/logo.jpg" alt="brand" width="120px"> --}}
-                <span>Inivec</span>
-            </a>
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="bx bx-menu"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Over Ons</a>
-                    <a class="nav-link" href="/artiesten">Artiesten</a>
-                    <a class="nav-link" href="/inschrijven">Inschrijven</a>
-                </div>
-                @if (Auth::check())
-                    <a href="/home" class="btn btn-primary shadow-none">Dashboard</a>
-                @else
-                    <a href="/login" class="btn btn-primary shadow-none">Login</a>
-                @endif
+  <!-- Navbar sectie -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid justify-content-between">
+        <a class="navbar-brand" href="/">
+            <span>Inivec</span>
+        </a>
+        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bx bx-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" aria-current="page" href="#">Over Ons</a>
+                <a class="nav-link" href="/artiesten">Artiesten</a>
+                <a class="nav-link" href="/inschrijven">Inschrijven</a>
             </div>
+            @if (Auth::check())
+                <a href="/home" class="btn btn-primary shadow-none">Dashboard</a>
+            @else
+                <a href="/login" class="btn btn-primary shadow-none">Login</a>
+            @endif
         </div>
-    </nav>
+    </div>
+</nav>
     @yield('content')
     <!-- Footer sectie -->
     <footer class="footer-distributed">

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('comments')->nullable();
             $table->float('budget');
             $table->string('contact_name');
+            $table->string('contact_infix')->nullabe();
+            $table->string('contact_lastname');
             $table->string('contact_email');
             $table->string('contact_phone');
             $table->boolean('can_be_called');

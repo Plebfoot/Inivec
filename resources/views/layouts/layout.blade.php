@@ -23,12 +23,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
 
 
 </head>
 
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- Navbar sectie -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="/">
+                <span>Inivec</span>
+            </a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bx bx-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Over Ons</a>
+                    <a class="nav-link" href="/artiesten">Artiesten</a>
+                    <a class="nav-link" href="/inschrijven">Inschrijven</a>
+                </div>
+                @if (Auth::check())
+                    <a href="/home" class="btn btn-primary shadow-none">Dashboard</a>
+                @else
+                    <a href="/login" class="btn btn-primary shadow-none">Login</a>
+                @endif
+            </div>
+        </div>
+    </nav>
 
     @yield('content')
 

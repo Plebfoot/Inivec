@@ -28,6 +28,7 @@ Route::get('/oproep/bedankt', function () { return view('/pages/thankyou'); })->
 
 
 /*----------------Controller Routes---------------------*/
+
 Route::get('/',[ArtistViewController::class, 'Index']);
 Route::get('/artiesten',[ArtistViewController::class, 'Artists']);
 Route::get('/arsitesten/{username}', [ArtistController::class, 'Index']);
@@ -40,6 +41,7 @@ Route::post('/users/profile_management', [App\Http\Controllers\HomeController::c
 
 
 /*----------------Auth Routes---------------------*/
+
 Auth::routes();
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');;
-Route::group(['middleware' => 'auth'], function() {Route::get('/instellingen', function() {return view('/users/profile_management');  }); Route::get('/calls',[OproepController::class, 'Index']); });
+Route::group(['middleware' => 'auth'], function() {Route::get('/instellingen', function() {return view('/users/profile_management');  }); Route::get('/calls',[ArtistCallController::class, 'index']); });

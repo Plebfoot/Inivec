@@ -17,11 +17,11 @@
     <div class="d-flex align-items-center justify-content-center vh-100">
         <div class="text-center">
             <h1 class="display-1 fw-bold">404</h1>
-            <p class="fs-3"> <span class="text-danger">Oops!</span> Page not found.</p>
+            <p class="fs-3"> <span class="text-danger">Oops!</span> <br>Pagina niet gevonden.</p>
             <p class="lead">
-                The page you’re looking for doesn’t exist.
+               De pagina die je probeert te bezoeken bestaat niet.
               </p>
-            <a href="/" class="btn btn-primary">Go Home</a>
+            <a href="/" class="btn btn-primary">Ga naar home</a>
         </div>
     </div>
 </body>

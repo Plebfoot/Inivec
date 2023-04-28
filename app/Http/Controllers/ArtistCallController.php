@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FormEntry;
+use App\Models\Oproep;
 use Illuminate\Http\Request;
 
 class ArtistCallController extends Controller
@@ -12,7 +13,7 @@ class ArtistCallController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -32,13 +33,15 @@ class ArtistCallController extends Controller
         $occasion = $request->input('occasion');
 
 
-
         // Als de 'occasion' gelijk is aan 'Anders'
         if ($occasion === 'Anders') {
+
             // Haal dan de 'other_occasion' input op uit het request en sla deze op in de $occasion variabele
             $occasion = $request->input('other_occasion');
+
         }
 
+       
 
         // Valideer de input data van het request
         $validatedData = $request->validate([
@@ -47,8 +50,11 @@ class ArtistCallController extends Controller
             'act_type' => 'required',
             'genre' => 'required',
             'event_date' => 'required',
+            'comments' => 'max:500',
             'budget' => 'required|numeric',
+            'contact_infix' => 'max:6',
             'contact_name' => 'required',
+            'contact_lastname' => 'required',
             'contact_email' => 'required|email',
             'contact_phone' => 'required',
             'can_be_called' => 'required'
@@ -58,9 +64,11 @@ class ArtistCallController extends Controller
                 'act_type.required' => 'Selecteer een type act',
                 'genre.required' => 'Selecteer een genre',
                 'event_date.required' => 'Selecteer een datum',
+                'comments.max' => 'Lengte van het bericht moet 500 letters betreffen.',
                 'budget.required' => 'Voer een budget in',
                 'budget.numeric' => 'Het budget moet een getal zijn',
-                'contact_name.required' => 'Voer een contactpersoon in',
+                'contact_name.required' => 'Voer een naam in',
+                'contact_lastname.required' => 'Voer een achternaam in',
                 'contact_email.required' => 'Voer een e-mailadres in',
                 'contact_email.email' => 'Voer een geldig e-mailadres in',
                 'contact_phone.required' => 'Voer een telefoonnummer in',
@@ -68,10 +76,13 @@ class ArtistCallController extends Controller
                 'can_be_called.in' => 'Kies of er wel of niet telefonisch contact opgenomen mag worden',
             ]);
 
-
+            $validatedData['occasion'] = $occasion;
 
         // Maak een nieuwe FormEntry instantie met de gevalideerde data en sla deze op in de database
         $formEntry = new FormEntry($validatedData);
+
+        dd($formEntry);
+        
         $formEntry->save();
         // Redirect naar de bedanktpagina
         return redirect()->route('artist_calls.thankyou');

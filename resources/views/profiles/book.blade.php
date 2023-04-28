@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.layout')
 
 <title>Inivec - {{ $username->username }}</title>
 <link rel="stylesheet" href="{{ asset('assets/css/artiesten/book.css') }}">

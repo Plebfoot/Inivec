@@ -221,17 +221,10 @@ section.hero {
     margin: 0 auto;
 }
 
-.form {
-    background-color: #fdfbfb;
-}
-
 #oproepForm {
     padding-top: 25px;
     padding-bottom: 25px;
-    max-width: 500px;
-    /* hier kun je de gewenste breedte instellen */
-    margin: 0 auto;
-    /* hiermee centreer je het formulier op de pagina */
+
 }
 
 @media (max-width: 767px) {
